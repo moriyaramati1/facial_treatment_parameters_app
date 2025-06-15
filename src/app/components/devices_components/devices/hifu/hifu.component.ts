@@ -15,7 +15,6 @@ import {MatSelect} from '@angular/material/select';
     FormsModule,
     KeyValuePipe,
     ReactiveFormsModule,
-    MatFormField,
     MatOption,
     MatSelect
   ],

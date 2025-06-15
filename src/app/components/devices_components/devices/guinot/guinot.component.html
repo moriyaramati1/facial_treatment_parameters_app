@@ -1,16 +1,27 @@
-<div dir="rtl">
-  <h5>{{ deviceName }}</h5>
-  <span>תוכנית</span>
-  <select [(ngModel)]="parameters.selectedProcedure">
-      @for (procedure of guinotProcedures | keyvalue ; track procedure.key) {
-           <option [value]="procedure.value">{{procedure.value}}</option>
-      }
-  </select>
-  <span>רמה</span>
-  <input type="number" [(ngModel)]="parameters.parameterValue" min="1" max="10">
+<form dir="rtl">
+  <h5 class="form-input-data">{{ deviceName }}</h5>
 
-    <div>
-      <span>חומר</span>
-      <input type="text" [(ngModel)]="material"/>
-    </div>
-</div>
+  <div class="form-input-data">
+    <span class="form-label">תוכנית</span>
+
+    <select class="form-control" [(ngModel)]="parameters.selectedProcedure">
+      @for (procedure of guinotProcedures | keyvalue ; track procedure.key) {
+        <option [value]="procedure.value">{{procedure.value}}</option>
+      }
+    </select>
+  </div>
+
+  <div class="form-input-data">
+    <span class="form-label">רמה</span>
+
+    <input class="form-control" type="number"
+           [(ngModel)]="parameters.parameterValue"
+           min="1" max="10">
+  </div>
+
+  <div class="form-input-data">
+    <span class="form-label">חומר</span>
+
+    <input class="form-control" type="text" [(ngModel)]="material"/>
+  </div>
+</form>
