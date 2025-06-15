@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {DeviceComponent} from 'src/app/components/devices_components/device-component';
 import {HifuParameters} from 'src/app/models/devices-parameters';
 import {DeviceNames} from 'src/app/models/devices-names';
 import {BoosterHandlers, HifuHandles} from 'src/app/models/handles';
@@ -8,6 +7,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormField} from '@angular/material/input';
 import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
+import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 
 @Component({
   selector: 'app-hifu',

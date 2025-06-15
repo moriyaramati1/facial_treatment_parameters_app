@@ -1,16 +1,16 @@
 import { Component, inject, Type, ViewChild } from '@angular/core';
-import { DeviceComponent } from 'src/app/components/devices_components/device-component'
 import { DevicesLoader } from './devices-loader.directive';
 import { Router } from '@angular/router';
-import {SonnextComponent} from 'src/app/components/devices_components/devices/sonnext/sonnext.component';
-import {GuinotComponent} from 'src/app/components/devices_components/devices/guinot/guinot.component';
-import {RinnovaComponent} from 'src/app/components/devices_components/devices/rinnova/rinnova.component';
-import {ApolloDuetComponent} from 'src/app/components/devices_components/devices/apollo-duet/apollo-duet.component';
-import {PlasmaComponent} from 'src/app/components/devices_components/devices/plasma/plasma.component';
-import {AndimedComponent} from 'src/app/components/devices_components/devices/andimed/andimed.component';
-import {WishComponent} from 'src/app/components/devices_components/devices/wish/wish.component';
-import {HifuComponent} from 'src/app/components/devices_components/devices/hifu/hifu.component';
 import {FormsModule, NgForm} from '@angular/forms';
+import {HifuComponent} from 'src/app/components/devices-components/devices/hifu/hifu.component';
+import {WishComponent} from 'src/app/components/devices-components/devices/wish/wish.component';
+import {GuinotComponent} from 'src/app/components/devices-components/devices/guinot/guinot.component';
+import {SonnextComponent} from 'src/app/components/devices-components/devices/sonnext/sonnext.component';
+import {RinnovaComponent} from 'src/app/components/devices-components/devices/rinnova/rinnova.component';
+import {ApolloDuetComponent} from 'src/app/components/devices-components/devices/apollo-duet/apollo-duet.component';
+import {AndimedComponent} from 'src/app/components/devices-components/devices/andimed/andimed.component';
+import {PlasmaComponent} from 'src/app/components/devices-components/devices/plasma/plasma.component';
+import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 
 @Component({
   selector: 'app-device-loader',

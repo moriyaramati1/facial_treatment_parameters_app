@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RinnovaParameters } from 'src/app/models/devices-parameters';
 import { DeviceNames } from 'src/app/models/devices-names';
 import { FormsModule } from '@angular/forms';
-import {DeviceComponent} from 'src/app/components/devices_components/device-component';
+import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 
 @Component({
   selector: 'app-rinnova',

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';import { DevicesLoaderComponent } from './components/devices_components/devices-loader/devices-loader.component'
+import { Component } from '@angular/core';
+import {DevicesLoaderComponent} from 'src/app/components/devices-components/devices-loader/devices-loader.component';
 
 @Component({
   selector: 'app-root',

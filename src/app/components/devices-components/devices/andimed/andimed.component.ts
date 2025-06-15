@@ -4,7 +4,7 @@ import { AndimedHandlers } from 'src/app/models/handles';
 import { AndimedParameters } from 'src/app/models/devices-parameters';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import {DeviceComponent} from 'src/app/components/devices_components/device-component';
+import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 
 @Component({
   selector: 'app-andimed',

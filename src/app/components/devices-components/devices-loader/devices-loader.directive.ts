@@ -1,5 +1,5 @@
 import {  Directive, input, Type,InputSignal, ViewContainerRef, effect, ComponentRef } from '@angular/core';
-import { DeviceComponent } from 'src/app/components/devices_components/device-component'
+import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 
 @Directive({
  selector: '[appDynamicChildLoader]',

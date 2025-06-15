@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {DeviceComponent} from 'src/app/components/devices_components/device-component';
 import {WishParameters} from 'src/app/models/devices-parameters';
 import {DeviceNames} from 'src/app/models/devices-names';
 import {KeyValuePipe} from '@angular/common';
@@ -8,6 +7,7 @@ import {WishHeads, WishCapsules} from 'src/app/models/wish-types';
 import {MatOption} from '@angular/material/core';
 import {MatFormField} from '@angular/material/input';
 import {MatSelect} from '@angular/material/select';
+import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 
 @Component({
   selector: 'app-wish',

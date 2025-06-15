@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {DeviceComponent} from 'src/app/components/devices_components/device-component';
 import {DeviceNames} from 'src/app/models/devices-names';
 import {SonnextParameters} from 'src/app/models/devices-parameters';
 import {FormsModule} from '@angular/forms';
+import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 
 @Component({
   selector: 'app-sonnext',
