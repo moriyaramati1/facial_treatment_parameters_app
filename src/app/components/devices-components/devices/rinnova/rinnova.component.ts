@@ -12,16 +12,14 @@ import {DeviceComponent} from 'src/app/components/devices-components/device-comp
 })
 export class RinnovaComponent extends DeviceComponent<RinnovaParameters> implements OnInit{
 
-  public ngOnInit(): void {
+  public override ngOnInit(): void {
     this.deviceName = DeviceNames.RINNOVA;
-      this.parameters = this.treatmentDataService.getProperties(this.deviceName);
-      if (!this.parameters) {
-        this.initializeParameters();
-      }
+    super.ngOnInit();
   }
 
   public saveParameters(): void{
-      this.treatmentDataService.setProperties(this.deviceName, this.parameters);
+      const allParameters = {...this.parameters, material: this.material};
+      this.treatmentDataService.setProperties(this.deviceName,allParameters);
       const treatmentParametersStr = `${this.deviceName}:\n` +  `\u202B תוכנית: ${this.parameters.procedureName}, ערך: ${this.parameters.procedureValue},
       צפיפות: ${this.parameters.density} , אנרגיה:${this.parameters.energy} `
       + super.updateTreatmetProperties();

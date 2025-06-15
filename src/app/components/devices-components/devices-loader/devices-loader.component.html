@@ -1,9 +1,11 @@
+<div dir="rtl">
+  <form #myForm="ngForm">
+    <div appDynamicChildLoader
+        [component]="selectedComponents[currentComponentIndex]" >
+    </div>
+    <button type="submit" (click)="moveToNextComponent(myForm)">Next</button>
+    <button (click)="backToPreviousComponent()"> Back</button>
+  </form>
+</div>
 
-<form #myForm="ngForm">
-  <div appDynamicChildLoader
-      [component]="selectedComponents[currentComponentIndex]" >
-  </div>
-
-  <button (click)="backToPreviousComponent()"> Back</button>
-  <button type="submit" (click)="moveToNextComponent(myForm)">Next</button>
-</form>
+<router-outlet></router-outlet>

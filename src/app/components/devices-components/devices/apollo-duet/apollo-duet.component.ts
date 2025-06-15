@@ -14,16 +14,14 @@ import {DeviceNames} from 'src/app/models/devices-names';
 })
 export class ApolloDuetComponent extends DeviceComponent<ApolloDuetParameters[]> implements OnInit{
 
-  public ngOnInit(): void {
+  public override ngOnInit(): void {
       this.deviceName = DeviceNames.APOLLO_DUET;
-      this.parameters = this.treatmentDataService.getProperties(this.deviceName);
-        if (!this.parameters) {
-            this.initializeParameters();
-        }
+      super.ngOnInit();
     }
 
   public saveParameters(): void{
-      this.treatmentDataService.setProperties(this.deviceName, this.parameters);
+      const allParameters = {...this.parameters, material: this.material};
+      this.treatmentDataService.setProperties(this.deviceName,allParameters);
       const treatmentParametersStr = `${this.deviceName}:\n` +
       this.parameters
         .map(procedure => `\u202B תוכנית: ${procedure.procedureName} עוצמה: ${procedure.intensity} טמפרטורה: ${procedure.temperature}`)
@@ -46,6 +44,8 @@ export class ApolloDuetComponent extends DeviceComponent<ApolloDuetParameters[]>
     maxIntensity: 6,
     temperature: undefined,
     maxTemperature: 45 }]
+    console.log('apoplo',this.parameters)
+
   }
 }
 

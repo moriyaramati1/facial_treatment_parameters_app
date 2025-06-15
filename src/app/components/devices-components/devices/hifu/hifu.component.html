@@ -1,23 +1,19 @@
-
-<div dir="rtl">
-  <h5>{{ deviceName }}</h5>
-  <mat-form-field>
-    <label>בחרי ידיות</label>
-    <mat-select [multiple]="true" [(value)]="parameters.handles" (selectionChange)="computeRequired()">
-      @for(handle of hifuHandles | keyvalue; track handle.key){
-        <mat-option [value]="handle.value">
-          {{handle.value}}
-        </mat-option>
-      }
-    </mat-select>
-  </mat-form-field>
-  <span> עוצמה</span>
-  <input type="number" [(ngModel)]="parameters.intensity" >
+<h5>{{ deviceName }}</h5>
+<mat-form-field>
+  <label>בחרי ידיות</label>
+  <mat-select [multiple]="true" [(value)]="parameters.handles" (selectionChange)="computeRequired()">
+    @for(handle of hifuHandles | keyvalue; track handle.key){
+      <mat-option [value]="handle.value">
+        {{handle.value}}
+      </mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+<span> עוצמה</span>
+<input type="number" [(ngModel)]="parameters.intensity" >
 
 
-  <div>
-    <span> חומר</span>
-    <input type="text" [(ngModel)]="material" required/>
-  </div>
-
+<div>
+  <span> חומר</span>
+  <input type="text" [(ngModel)]="material" required/>
 </div>

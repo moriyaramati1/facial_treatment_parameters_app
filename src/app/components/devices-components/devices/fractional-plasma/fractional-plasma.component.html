@@ -1,0 +1,16 @@
+<h5>{{ deviceName }}</h5>
+<mat-form-field>
+  <label>בחרי ראשים</label>
+  <mat-select [multiple]="true" [(value)]="parameters.technics" >
+    @for(technic of  plasmaFractionalTechnics | keyvalue; track technic.key){
+      <mat-option [value]="technic.value">
+        {{technic.value}}
+      </mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+<div>
+  <span> חומר</span>
+  <input type="text" [(ngModel)]="material"/>
+</div>

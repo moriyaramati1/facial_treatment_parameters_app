@@ -10,5 +10,6 @@ export enum DeviceNames {
   PORTIA = 'פורציה',
   FRACTIONALPLASMA = 'פלזמה פרקשנל',
   BIOMICRONEEDLING = 'ביומיקרונידלינג',
+  MICRONEEDLING = 'מיקרונידלינג',
   GUINOT='גינו',
 }

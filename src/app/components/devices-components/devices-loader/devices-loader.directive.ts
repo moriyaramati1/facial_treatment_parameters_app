@@ -20,7 +20,6 @@ export class DevicesLoader {
   }
 
    public activateParmeterSaving() {
-    console.log('callComponentMethod')
     const instance = this.componentRef?.instance;
     return instance.saveParameters()
   }

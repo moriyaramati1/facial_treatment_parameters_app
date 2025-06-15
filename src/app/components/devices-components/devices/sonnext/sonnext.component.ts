@@ -12,16 +12,14 @@ import {DeviceComponent} from 'src/app/components/devices-components/device-comp
 })
 export class SonnextComponent extends DeviceComponent<SonnextParameters> implements OnInit {
 
-  public ngOnInit(): void {
+  public override ngOnInit(): void {
     this.deviceName = DeviceNames.SONNEXT;
-    this.parameters = this.treatmentDataService.getProperties(this.deviceName);
-    if (!this.parameters) {
-      this.initializeParameters();
-    }
+    super.ngOnInit();
   }
 
   public saveParameters(): void{
-    this.treatmentDataService.setProperties(this.deviceName, this.parameters);
+    const allParameters = {...this.parameters, material: this.material};
+    this.treatmentDataService.setProperties(this.deviceName,allParameters);
     const treatmentParametersStr = `\u202B ${this.deviceName}:\n` +
       `\u202B עצימות: ${this.parameters.intensity}, אורך גל: ${this.parameters.wave}, מהירות: ${this.parameters.velocity}`
       + super.updateTreatmetProperties();

@@ -1,15 +1,27 @@
-import { inject } from "@angular/core";
+import {Directive, inject, OnInit} from "@angular/core";
 import {DeviceNames} from 'src/app/models/devices-names';
-import {TreatmentDataServiceService} from 'src/app/services/treatment-data-service.service';
+import {TreatmentDataService} from 'src/app/services/treatment-data.service';
 
-export abstract class DeviceComponent<TParams> {
+@Directive()
+export abstract class DeviceComponent<TParams> implements OnInit{
 
-    public treatmentDataService = inject(TreatmentDataServiceService);
+    public treatmentDataService = inject(TreatmentDataService);
     public deviceName!: DeviceNames;
     public parameters!: TParams;
     public material: string | undefined;
 
-    public updateTreatmetProperties():string {
+    public ngOnInit() {
+      const allTreatmentParameters = this.treatmentDataService.getProperties(this.deviceName);
+      if (!allTreatmentParameters) {
+        this.initializeParameters();
+      }
+      else {
+        this.material = allTreatmentParameters.material;
+        this.parameters = allTreatmentParameters as TParams;
+      }
+    }
+
+  public updateTreatmetProperties():string {
      if(this.material){
         return `\n \u202B חומר: ${this.material}`
       }

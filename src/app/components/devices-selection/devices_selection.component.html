@@ -1,19 +1,23 @@
 <div class="d-flex align-items-center w-50">
   <mat-grid-list class="w-50" cols="6" rowHeight="200" >
     @for (device of devices; track device) {
-      <mat-grid-tile class="w-75"
-        [colspan]="device.cols"
-        [rowspan]="device.rows">
-        
-        <div class="d-flex flex-column align-items-center justify-content-center h-100 m-5">
-          <img 
-            class="object-fit-cover border border-secondary rounded-5 w-50" 
-            [src]="device.image"
-            alt="{{ device.name }}">
-            {{ device.name }}
-        </div>
+      <div (click)=treatmentDataService.addDevice(device.component)>
+        <mat-grid-tile class="w-75"
+                       [colspan]="device.cols"
+                       [rowspan]="device.rows">
 
-      </mat-grid-tile>
+          <div class="d-flex flex-column align-items-center justify-content-center h-100 m-5" >
+            <img
+              class="object-fit-cover border border-secondary rounded-5 w-50"
+              [src]="device.image"
+              alt="{{ device.name }}">
+            {{ device.name }}
+          </div>
+
+        </mat-grid-tile>
+      </div>
     }
   </mat-grid-list>
 </div>
+
+<button type="submit" (click)="moveToDevicesComponent()">Next</button>

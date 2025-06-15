@@ -1,17 +1,14 @@
+<h5>{{ deviceName }}</h5>
+<span>תוכנית </span>
 
-<div dir="rtl">
-  <h5>{{ deviceName }}</h5>
-  <span>תוכנית </span>
-
-  @for (procedure of plasmaProcedures | keyvalue ; track procedure.key) {
-    <button  (click)="parameters.selectedProcedure=procedure.value">
-          {{procedure.value}}
-      </button>
-  }
-   @if(parameters.selectedProcedure != plasmaProcedures.Diamond){
-     <span>ערך </span>
-     <input type="number" min="1" max="10" [(ngModel)]="parameters.parameterValue">
-  }
-  <span>חומר </span>
-  <input type="text" [(ngModel)]="material"/>
-</div>
+@for (procedure of plasmaProcedures | keyvalue ; track procedure.key) {
+  <button  (click)="parameters.selectedProcedure=procedure.value">
+    {{procedure.value}}
+  </button>
+}
+@if(parameters.selectedProcedure != plasmaProcedures.Diamond){
+  <span>ערך </span>
+  <input type="number" min="1" max="10" [(ngModel)]="parameters.parameterValue">
+}
+<span>חומר </span>
+<input type="text" [(ngModel)]="material"/>

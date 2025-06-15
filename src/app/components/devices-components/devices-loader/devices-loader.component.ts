@@ -1,6 +1,6 @@
-import { Component, inject, Type, ViewChild } from '@angular/core';
+import {Component, inject, OnInit, Type, ViewChild} from '@angular/core';
 import { DevicesLoader } from './devices-loader.directive';
-import { Router } from '@angular/router';
+import {Router, RouterOutlet} from '@angular/router';
 import {FormsModule, NgForm} from '@angular/forms';
 import {HifuComponent} from 'src/app/components/devices-components/devices/hifu/hifu.component';
 import {WishComponent} from 'src/app/components/devices-components/devices/wish/wish.component';
@@ -11,44 +11,60 @@ import {ApolloDuetComponent} from 'src/app/components/devices-components/devices
 import {AndimedComponent} from 'src/app/components/devices-components/devices/andimed/andimed.component';
 import {PlasmaComponent} from 'src/app/components/devices-components/devices/plasma/plasma.component';
 import {DeviceComponent} from 'src/app/components/devices-components/device-component';
+import {MicroneedlingComponent} from 'src/app/components/devices-components/devices/microneedling/microneedling.component';
+import {PortiaComponent} from 'src/app/components/devices-components/devices/portia/portia.component';
+import {
+  FractionalPlasmaComponent
+} from 'src/app/components/devices-components/devices/fractional-plasma/fractional-plasma.component';
+import {
+  BioMicroneedlingComponent
+} from 'src/app/components/devices-components/devices/biomicroneedling/biomicroneedling.component';
+import { Location } from '@angular/common';
+import {TreatmentDataService} from 'src/app/services/treatment-data.service';
 
 @Component({
   selector: 'app-device-loader',
-  imports: [DevicesLoader, FormsModule],
+  imports: [DevicesLoader, FormsModule, RouterOutlet],
   templateUrl: './devices-loader.component.html',
   styleUrl: './devices-loader.component.scss'
 })
-export class DevicesLoaderComponent{
+export class DevicesLoaderComponent implements OnInit {
   public selectedComponents: Type<DeviceComponent<any>>[] = [
-    HifuComponent,
-    WishComponent,
-    SonnextComponent,
-    GuinotComponent,
-    RinnovaComponent,
-    ApolloDuetComponent,
-    PlasmaComponent,
-    AndimedComponent
+    // BioMicroneedlingComponent,
+    // FractionalPlasmaComponent,
+    // MicroneedlingComponent,
+    // PortiaComponent,
+    // HifuComponent,
+    // WishComponent,
+    // SonnextComponent,
+    // GuinotComponent,
+    // RinnovaComponent,
+    // ApolloDuetComponent,
+    // PlasmaComponent,
+    // AndimedComponent
   ];
     @ViewChild(DevicesLoader)
-    private dynamicHost!: DevicesLoader;
+    public dynamicHost!: DevicesLoader;
 
     public currentComponentIndex: number = 0;
 
     private router = inject(Router);
+    private location: Location =inject(Location);
+    public treatmentDataService = inject(TreatmentDataService);
 
+    public ngOnInit(){
+      this.selectedComponents = this.treatmentDataService.getSelectedDevices();
+    }
 
-    public moveToNextComponent(form: NgForm){
-      console.log(form)
+  public moveToNextComponent(form: NgForm){
       if (form.valid) {
         this.dynamicHost.activateParmeterSaving();
-        if (this.currentComponentIndex < this.selectedComponents.length){
-          this.currentComponentIndex += 1 ;
-        }
-        else {
+        this.currentComponentIndex += 1 ;
+        if (this.currentComponentIndex > this.selectedComponents.length -1){
           this.router.navigate(['/final-stage'])
         }
       } else {
-        alert('fill props')
+        alert('fill props') // todo: not working...
       }
     }
 
@@ -57,7 +73,10 @@ export class DevicesLoaderComponent{
             this.currentComponentIndex -= 1 ;
         }
         else {
-            this.router.navigate([''])
+          this.location.back()
+            // this.router.navigate([''],{
+            //   state: { isDeviceSelectionStage: true }
+            // })
         }
 
     }

@@ -19,16 +19,14 @@ export class WishComponent extends DeviceComponent<WishParameters>{
   public wishHeads = WishHeads;
   public wishCapsules = WishCapsules;
 
-  public ngOnInit(): void {
+  public override ngOnInit(): void {
     this.deviceName = DeviceNames.WISH;
-    this.parameters = this.treatmentDataService.getProperties(this.deviceName);
-    if (!this.parameters) {
-      this.initializeParameters();
-    }
+    super.ngOnInit();
   }
 
   public saveParameters(): void{
-    this.treatmentDataService.setProperties(this.deviceName, this.parameters);
+    const allParameters = {...this.parameters, material: this.material};
+    this.treatmentDataService.setProperties(this.deviceName,allParameters);
     const treatmentParametersStr = `\u202B ${this.deviceName}:\n` +
       `קפסולה: ${this.parameters.capsule}\n ראשים:` +
       this.parameters.head

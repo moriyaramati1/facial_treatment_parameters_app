@@ -1,5 +1,5 @@
 import {AndimedHandlers, HifuHandles} from "src/app/models/handles";
-import { GuinotProcedures, PlasmaProcedures } from "./procedures-types";
+import {GuinotProcedures, PlasmaFractionalTechnics, PlasmaProcedures} from "./procedures-types";
 
 export interface AndimedParameters {
     handle?: AndimedHandlers ,
@@ -47,4 +47,16 @@ export interface WishParameters {
 export interface HifuParameters {
   handles: HifuHandles[],
   intensity?: number,
+}
+
+export interface MicroNeedlingParameters {
+  depth?: number,
+}
+
+export interface PlasmaFractionalParameters {
+  technics: PlasmaFractionalTechnics[]
+}
+
+export interface BioMicroneedlingParameters {
+  type?: string
 }

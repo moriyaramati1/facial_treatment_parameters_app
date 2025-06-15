@@ -17,16 +17,14 @@ import {DeviceComponent} from 'src/app/components/devices-components/device-comp
 export class PlasmaComponent extends DeviceComponent<PalsmaParameters> implements OnInit{
   public plasmaProcedures = PlasmaProcedures;
 
-  public ngOnInit(): void {
+  public override ngOnInit(): void {
       this.deviceName = DeviceNames.PLASMA;
-      this.parameters = this.treatmentDataService.getProperties(this.deviceName);
-      if (!this.parameters) {
-        this.initializeParameters();
-      }
+      super.ngOnInit();
   }
 
   public saveParameters(): void{
-      this.treatmentDataService.setProperties(this.deviceName, this.parameters);
+      const allParameters = {...this.parameters, material: this.material};
+      this.treatmentDataService.setProperties(this.deviceName,allParameters);
       const treatmentParametersStr = `${this.deviceName}:\n` +  `\u202B תוכנית: ${this.parameters.selectedProcedure}, ערך: ${this.parameters.parameterValue}`
       + super.updateTreatmetProperties();
       console.log(treatmentParametersStr)

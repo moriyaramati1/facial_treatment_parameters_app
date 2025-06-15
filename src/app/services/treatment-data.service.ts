@@ -1,12 +1,14 @@
-import { Injectable } from '@angular/core';
+import {Injectable, Type} from '@angular/core';
 import { DeviceNames } from 'src/app/models/devices-names';
+import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TreatmentDataServiceService {
+export class TreatmentDataService {
+  private selectedDevices: Type<DeviceComponent<any>>[] = [];
   private devicesData: Map<DeviceNames,string> = new Map<DeviceNames, string>();
-  private devicesProperties: Map<DeviceNames,object> = new Map<DeviceNames, object>();
+  private devicesProperties: Map<DeviceNames, object> = new Map<DeviceNames, object>();
 
 
   public getProperties(deviceName: DeviceNames) :any | undefined {
@@ -20,6 +22,15 @@ export class TreatmentDataServiceService {
 
   public setData(deviceName: DeviceNames, deviceParsedProperties: string): void {
       this.devicesData.set(deviceName, deviceParsedProperties);
+  }
+
+  public addDevice(device: Type<DeviceComponent<any>>){
+    console.log('this.selectedDevices',this.selectedDevices)
+    this.selectedDevices.push(device);
+  }
+
+  public getSelectedDevices():Type<DeviceComponent<any>>[]{
+    return this.selectedDevices;
   }
 
 }
