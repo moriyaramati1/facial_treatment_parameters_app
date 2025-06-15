@@ -1,0 +1,17 @@
+<div dir="rtl">
+  <h5>{{ deviceName }}</h5>
+  @for (procedure of parameters; track $index){
+      <p>{{procedure.procedureName}}</p>
+      <span>אינטנסיטי </span>
+      <input type="number" [max]="procedure.maxIntensity" [(ngModel)]="procedure.intensity">
+      <span>טמפרטורה </span>
+      <input type="number" [max]="procedure.maxTemperature" [(ngModel)]="procedure.temperature">
+  }
+
+  <div>
+    <span>חומר </span>
+    <input type="text" [(ngModel)]="material"/>
+  </div>
+</div>
+
+

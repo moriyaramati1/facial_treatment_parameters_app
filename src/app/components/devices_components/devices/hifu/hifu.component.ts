@@ -1,0 +1,61 @@
+import { Component } from '@angular/core';
+import {DeviceComponent} from 'src/app/components/devices_components/device-component';
+import {HifuParameters} from 'src/app/models/devices-parameters';
+import {DeviceNames} from 'src/app/models/devices-names';
+import {BoosterHandlers, HifuHandles} from 'src/app/models/handles';
+import {KeyValuePipe} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatFormField} from '@angular/material/input';
+import {MatOption} from '@angular/material/core';
+import {MatSelect} from '@angular/material/select';
+
+@Component({
+  selector: 'app-hifu',
+  imports: [
+    FormsModule,
+    KeyValuePipe,
+    ReactiveFormsModule,
+    MatFormField,
+    MatOption,
+    MatSelect
+  ],
+  templateUrl: './hifu.component.html',
+  styleUrl: './hifu.component.scss'
+})
+export class HifuComponent extends DeviceComponent<HifuParameters>{
+  public hifuHandles = HifuHandles;
+  public materialRequired: boolean = false;
+
+  public ngOnInit(): void {
+    this.deviceName = DeviceNames.HIFU;
+    this.parameters = this.treatmentDataService.getProperties(this.deviceName);
+    if (!this.parameters) {
+      this.initializeParameters();
+    }
+  }
+
+  public saveParameters(): void{
+    this.treatmentDataService.setProperties(this.deviceName, this.parameters);
+    const treatmentParametersStr = `\u202B ${this.deviceName}:\n ידיות:` +
+      this.parameters.handles
+        .map(handle => `\u202B ${handle}`)
+        .join(',') +
+    `\n עוצמה: ${this.parameters.intensity} ` + super.updateTreatmetProperties()
+    console.log(`${treatmentParametersStr}`);
+    this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
+  }
+
+  public initializeParameters(): void{
+    this.parameters = {
+      handles: [],
+      intensity: undefined,
+    };
+  }
+
+  public computeRequired(): void {
+    this.materialRequired = this.parameters.handles.some((handle) => BoosterHandlers.includes(handle));
+    console.log('computeRequired',this.materialRequired)
+
+  }
+
+}

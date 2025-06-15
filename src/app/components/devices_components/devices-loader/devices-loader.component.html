@@ -1,0 +1,9 @@
+
+<form #myForm="ngForm">
+  <div appDynamicChildLoader
+      [component]="selectedComponents[currentComponentIndex]" >
+  </div>
+
+  <button (click)="backToPreviousComponent()"> Back</button>
+  <button type="submit" (click)="moveToNextComponent(myForm)">Next</button>
+</form>
