@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center w-50">
   <mat-grid-list class="w-50" cols="6" rowHeight="200" >
     @for (device of devices; track device) {
-      <div (click)=treatmentDataService.addDevice(device.component)>
+      <div (click)=treatmentDataService.updateSelection(device.name,device.component)>
         <mat-grid-tile class="w-75"
                        [colspan]="device.cols"
                        [rowspan]="device.rows">

@@ -24,11 +24,15 @@ export class TreatmentDataService {
       this.devicesData.set(deviceName, deviceParsedProperties);
   }
 
-  public addDevice(device: Type<DeviceComponent<any>>){
-    this.selectedDevices.push(device);
-    console.log('this.selectedDevices',this.selectedDevices)
-    // todo: if unselection then clear data
-
+  public updateSelection(deviceName: DeviceNames, deviceComponent: Type<DeviceComponent<any>> ){
+    if (this.selectedDevices.includes(deviceComponent)){
+      this.selectedDevices = this.selectedDevices.filter(device => device !== deviceComponent);
+      this.devicesData.delete(deviceName);
+      this.devicesProperties.delete(deviceName);
+    }
+    else {
+      this.selectedDevices.push(deviceComponent);
+    }
   }
 
   public getSelectedDevices():Type<DeviceComponent<any>>[]{

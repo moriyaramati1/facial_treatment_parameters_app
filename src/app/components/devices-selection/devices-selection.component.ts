@@ -27,7 +27,7 @@ export interface Device {
   image: string,
   cols: number,
   rows: number,
-  name: string
+  name: DeviceNames,
   component: Type<DeviceComponent<any>>
 }
 
