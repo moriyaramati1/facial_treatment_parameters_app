@@ -1,11 +1,19 @@
-<div dir="rtl">
-  <form #myForm="ngForm">
-    <div appDynamicChildLoader
-        [component]="selectedComponents[currentComponentIndex]" >
+<div class="d-flex justify-content-center mt-1">
+  <div class="card">
+    <div class="card-body">
+      <form dir="rtl" #myForm="ngForm">
+        <div appDynamicChildLoader
+             [component]="selectedComponents[currentComponentIndex]" >
+        </div>
+      </form>
     </div>
-    <button type="submit" (click)="moveToNextComponent(myForm)">Next</button>
-    <button (click)="backToPreviousComponent()"> Back</button>
-  </form>
+
+    <div class="card-footer">
+      <button class="btn btn-secondary me-1" (click)="backToPreviousComponent()"> Back</button>
+
+      <button class="btn btn-primary"  type="submit" (click)="moveToNextComponent(myForm)">Next</button>
+    </div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

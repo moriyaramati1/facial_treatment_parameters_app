@@ -74,9 +74,6 @@ export class DevicesLoaderComponent implements OnInit {
         }
         else {
           this.location.back()
-            // this.router.navigate([''],{
-            //   state: { isDeviceSelectionStage: true }
-            // })
         }
 
     }

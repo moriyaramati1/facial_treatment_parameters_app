@@ -1,15 +1,28 @@
-<h5>{{ deviceName }}</h5>
-<span> עצימות </span>
-<input type="number" min="1" max="5" [(ngModel)]="parameters.intensity">
-<span> אורך גל </span>
-<select [(ngModel)]="parameters.wave">
-  <option>ארוך</option>
-  <option>קצר</option>
-</select>
-<span> מהירות </span>
-<input type="number" min="1" max="4" [(ngModel)]="parameters.velocity">
+<h5 class="form-input-data">{{ deviceName }}</h5>
 
-<div>
-  <span>חומר</span>
-  <input type="text" [(ngModel)]="material"/>
+<div class="form-input-data">
+  <span class="form-label"> עצימות </span>
+
+  <input class="form-control" type="number" min="1" max="5" [(ngModel)]="parameters.intensity">
+</div>
+
+<div class="form-input-data">
+  <span class="form-label"> אורך גל </span>
+
+  <select class="form-control" [(ngModel)]="parameters.wave">
+    <option>ארוך</option>
+    <option>קצר</option>
+  </select>
+</div>
+
+<div class="form-input-data">
+  <span class="form-label"> מהירות </span>
+
+  <input class="form-control" type="number" min="1" max="4" [(ngModel)]="parameters.velocity">
+</div>
+
+<div class="form-input-data">
+  <span class="form-label">חומר</span>
+
+  <input class="form-control" type="text" [(ngModel)]="material"/>
 </div>

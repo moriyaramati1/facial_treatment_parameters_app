@@ -21,6 +21,7 @@ import {RinnovaComponent} from 'src/app/components/devices-components/devices/ri
 import {ApolloDuetComponent} from 'src/app/components/devices-components/devices/apollo-duet/apollo-duet.component';
 import {PlasmaComponent} from 'src/app/components/devices-components/devices/plasma/plasma.component';
 import {AndimedComponent} from 'src/app/components/devices-components/devices/andimed/andimed.component';
+import {DeviceNames} from 'src/app/models/devices-names';
 
 export interface Device {
   image: string,
@@ -30,34 +31,32 @@ export interface Device {
   component: Type<DeviceComponent<any>>
 }
 
-
 @Component({
   selector: 'app-devices-selection',
   imports: [ MatGridListModule ],
-  templateUrl: './devices_selection.component.html',
-  styleUrl: './devices_selection.component.scss'
+  templateUrl: './devices-selection.component.html',
+  styleUrl: './devices-selection.component.scss'
 })
 
 export class DevicesSelectionComponent {
   public router = inject(Router);
   public treatmentDataService = inject(TreatmentDataService);
-
   devices: Device[] = [
-    {name: 'אנדימד', cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: BioMicroneedlingComponent},
-    {name: 'אנ   דימד', cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: FractionalPlasmaComponent},
-    {name: 'אנ   דימד', cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: MicroneedlingComponent},
+    {name: DeviceNames.BIOMICRONEEDLING, cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: BioMicroneedlingComponent},
+    {name: DeviceNames.FRACTIONALPLASMA, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: FractionalPlasmaComponent},
+    {name: DeviceNames.MICRONEEDLING, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: MicroneedlingComponent},
 
-    {name: 'אנדימד', cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: PortiaComponent},
-    {name: 'אנ   דימד', cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: HifuComponent},
-    {name: 'אנ   דימד', cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: WishComponent},
+    {name: DeviceNames.PORTIA, cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: PortiaComponent},
+    {name: DeviceNames.HIFU, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: HifuComponent},
+    {name: DeviceNames.WISH, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: WishComponent},
 
-    {name: 'אנדימד', cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: SonnextComponent},
-    {name: 'אנ   דימד', cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: GuinotComponent},
-    {name: 'אנ   דימד', cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: RinnovaComponent},
+    {name: DeviceNames.SONNEXT, cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: SonnextComponent},
+    {name: DeviceNames.GUINOT, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: GuinotComponent},
+    {name: DeviceNames.RINNOVA, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: RinnovaComponent},
 
-    {name: 'אנדימד', cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: ApolloDuetComponent},
-    {name: 'אנ   דימד', cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: PlasmaComponent},
-    {name: 'אנ   דימד', cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: AndimedComponent},
+    {name: DeviceNames.APOLLO_DUET, cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: ApolloDuetComponent},
+    {name: DeviceNames.PLASMA, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: PlasmaComponent},
+    {name: DeviceNames.ANDIMED, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: AndimedComponent},
 
   ]
   public moveToDevicesComponent(){

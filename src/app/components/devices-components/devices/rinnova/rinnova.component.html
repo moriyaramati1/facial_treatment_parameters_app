@@ -1,12 +1,25 @@
-<h5>{{ deviceName }}</h5>
-<span> {{parameters.procedureName}} </span>
-<input type="number" min="1" [max]="6" [(ngModel)]="parameters.procedureValue">
-<span> צפיפות </span>
-<input type="number" min="100" [max]="450" [(ngModel)]="parameters.density">
-<span> אנרגיה </span>
-<input type="number" min="10" [max]="40" [step]="5" [(ngModel)]="parameters.energy">
+<h5 class="form-input-data">{{ deviceName }}</h5>
 
-<div>
-  <span>חומר</span>
-  <input type="text" [(ngModel)]="material"/>
+<div class="form-input-data">
+  <span class="form-label"> {{parameters.procedureName}} </span>
+
+  <input class="form-control" type="number" min="1" [max]="6" [(ngModel)]="parameters.procedureValue">
+</div>
+
+<div class="form-input-data">
+  <span class="form-label"> צפיפות </span>
+
+  <input class="form-control" type="number" min="100" [max]="450" [(ngModel)]="parameters.density">
+</div>
+
+<div class="form-input-data">
+  <span class="form-label"> אנרגיה </span>
+
+  <input class="form-control" type="number" min="10" [max]="40" [step]="5" [(ngModel)]="parameters.energy">
+</div>
+
+<div class="form-input-data">
+  <span class="form-label">חומר</span>
+
+  <input class="form-control" type="text" [(ngModel)]="material"/>
 </div>

@@ -1,22 +1,32 @@
-<h5>{{ deviceName }}</h5>
+<h5 class="form-input-data">{{ deviceName }}</h5>
 
 @for (parameter of parameters ; track $index) {
-  <div>
-    <span>ידית</span>
-    <select [(ngModel)]="parameter.handle">
-      @for (handle of andimedHandlers | keyvalue ; track handle.key) {
-        <option [value]="handle.value">{{handle.value}}</option>
-      }
-    </select>
-    <span>רמה</span>
-    <input type="number" [(ngModel)]="parameter.level">
+  <div class="d-flex flex-row">
+    <div class="form-input-data ms-2">
+      <span class="form-label">ידית</span>
+
+      <select class="form-control" [(ngModel)]="parameter.handle">
+        @for (handle of andimedHandlers | keyvalue ; track handle.key) {
+          <option [value]="handle.value">{{handle.value}}</option>
+        }
+      </select>
+    </div>
+
+    <div class="form-input-data">
+      <span class="form-label">רמה</span>
+
+      <input class="form-control" type="number" [(ngModel)]="parameter.level">
+    </div>
   </div>
 }
-<div>
-  <span> חומר</span>
-  <input type="text" [(ngModel)]="material"/>
-</div>
-
-<button (click)="addParameter()">
+<button class="form-control form-input-data" (click)="addParameter()">
   הוספת ידית
 </button>
+
+<div class="form-input-data">
+  <span class="form-label"> חומר</span>
+
+  <input class="form-control" type="text" [(ngModel)]="material"/>
+</div>
+
+

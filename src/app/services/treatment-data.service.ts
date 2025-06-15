@@ -25,8 +25,10 @@ export class TreatmentDataService {
   }
 
   public addDevice(device: Type<DeviceComponent<any>>){
-    console.log('this.selectedDevices',this.selectedDevices)
     this.selectedDevices.push(device);
+    console.log('this.selectedDevices',this.selectedDevices)
+    // todo: if unselection then clear data
+
   }
 
   public getSelectedDevices():Type<DeviceComponent<any>>[]{

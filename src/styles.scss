@@ -1,2 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/scss/bootstrap";
+
+
+.card {
+  min-width: max-content;
+  width: 60%
+}
+
+.form-input-data {
+  margin-bottom: 5%;
+}

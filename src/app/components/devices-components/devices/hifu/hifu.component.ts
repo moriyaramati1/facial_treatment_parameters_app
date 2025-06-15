@@ -15,9 +15,9 @@ import {DeviceComponent} from 'src/app/components/devices-components/device-comp
     FormsModule,
     KeyValuePipe,
     ReactiveFormsModule,
-    MatFormField,
     MatOption,
-    MatSelect
+    MatSelect,
+    MatFormField
   ],
   templateUrl: './hifu.component.html',
   styleUrl: './hifu.component.scss'
