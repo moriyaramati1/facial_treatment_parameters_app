@@ -18,12 +18,13 @@ export class SonnextComponent extends DeviceComponent<SonnextParameters> impleme
   }
 
   public saveParameters(): void{
-    const allParameters = {...this.parameters, material: this.material};
+    const allParameters = { parameters: this.parameters, material: this.material };
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
+
     const treatmentParametersStr = `\u202B ${this.deviceName}:\n` +
       `\u202B עצימות: ${this.parameters.intensity}, אורך גל: ${this.parameters.wave}, מהירות: ${this.parameters.velocity}`
       + super.updateTreatmetProperties();
-    console.log(treatmentParametersStr)
+
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
 
   }

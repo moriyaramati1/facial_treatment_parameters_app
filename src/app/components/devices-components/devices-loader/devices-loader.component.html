@@ -1,17 +1,17 @@
 <div class="d-flex justify-content-center mt-1">
   <div class="card">
     <div class="card-body">
-      <form dir="rtl" #myForm="ngForm" novalidate>
+      <form ngNativeValidate dir="rtl" #myForm="ngForm" (ngSubmit)="moveToNextComponent()">
         <div appDynamicChildLoader
-             [component]="selectedComponents[currentComponentIndex]" >
+             [component]="selectedComponents[this.treatmentDataService.currentComponentIndex]" >
+        </div>
+
+        <div class="card-footer bg-white mt-5 w-50 border-0">
+            <button class="btn btn-primary w-25" type="submit" >הבא </button>
+
+            <button class="btn btn-secondary me-1" type="button" (click)="backToPreviousComponent()"> הקודם</button>
         </div>
       </form>
-    </div>
-
-    <div class="card-footer">
-      <button class="btn btn-secondary me-1" (click)="backToPreviousComponent()"> Back</button>
-
-      <button class="btn btn-primary" (click)="moveToNextComponent(myForm)">Next</button>
     </div>
   </div>
 </div>

@@ -1,6 +1,2 @@
-<p>final-stage works!</p>
-<p>final-stage works!</p>
-<p>final-stage works!</p>
-<button (click)="sendData()">
-  send
-</button>
+<button class="btn btn-secondary me-1 " (click)="location.back()"> הקודם</button>
+<button (click)="sendData()" [disabled]="isSendEnabled"> שלח </button>

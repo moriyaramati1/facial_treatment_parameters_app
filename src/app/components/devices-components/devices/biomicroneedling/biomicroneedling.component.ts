@@ -19,11 +19,11 @@ export class BioMicroneedlingComponent extends DeviceComponent<BioMicroneedlingP
   }
 
   public saveParameters(): void{
-    const allParameters = {...this.parameters, material: this.material};
+    const allParameters = { parameters: this.parameters, material: this.material };
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
-    console.log('this.parameters',this.parameters);
+
     const treatmentParametersStr = `\u202B ${this.deviceName}:\n \u200Fסוג: ${this.parameters.type}` + super.updateTreatmetProperties();
-    console.log(`${treatmentParametersStr}`);
+
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 
@@ -32,5 +32,4 @@ export class BioMicroneedlingComponent extends DeviceComponent<BioMicroneedlingP
       type: undefined,
     }
   }
-
 }

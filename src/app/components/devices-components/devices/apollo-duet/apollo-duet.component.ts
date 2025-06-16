@@ -19,7 +19,7 @@ export class ApolloDuetComponent extends DeviceComponent<ApolloDuetParameters[]>
     }
 
   public saveParameters(): void{
-      const allParameters = {...this.parameters, material: this.material};
+      const allParameters = { parameters: this.parameters, material: this.material };
       this.treatmentDataService.setProperties(this.deviceName,allParameters);
       const treatmentParametersStr = `\u202B ${this.deviceName}:\n` +
       this.parameters
@@ -29,15 +29,15 @@ export class ApolloDuetComponent extends DeviceComponent<ApolloDuetParameters[]>
       this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 
-  public initializeParameters(): void{
+  public initializeParameters(): void   {
     this.parameters = [{
     procedureName: 'אלקטרופורציה',
     intensity: undefined,
     maxIntensity: 40,
     temperature: undefined,
     maxTemperature: 45
-},
-{
+  },
+  {
     procedureName: 'RF',
     intensity: undefined,
     maxIntensity: 6,

@@ -1,4 +1,4 @@
-<button class="bi bi-box-arrow-right" (click)="logOut()"></button>
+<button type="button"  class="bi bi-box-arrow-right" (click)="logOut()"></button>
 
 @if(users){
   <div>
@@ -37,5 +37,5 @@
     }
   </div>
 
-  <button class="gold-outline-button" type="submit" (click)="moveToDevicesComponent()" [disabled]="!treatmentDataService.selectedDevices.length">Next</button>
+  <button class="gold-outline-button" type="submit" (click)="moveToDevicesComponent()" [disabled]="!treatmentDataService.selectedDevices.length">הבא</button>
 </div>

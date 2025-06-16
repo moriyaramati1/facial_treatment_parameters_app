@@ -21,13 +21,13 @@ export class GuinotComponent extends DeviceComponent<GuinotParameters> implement
   }
 
   public saveParameters(): void{
-      const allParameters = {...this.parameters, material: this.material};
-      this.treatmentDataService.setProperties(this.deviceName,allParameters);
-       const treatmentParametersStr = `${this.deviceName}:\n` +  `\u202Bתוכנית: ${this.parameters.selectedProcedure}, ערך: ${this.parameters.parameterValue} ,`
-      + super.updateTreatmetProperties();
-      console.log(treatmentParametersStr)
+    const allParameters = { parameters: this.parameters, material: this.material };
+    this.treatmentDataService.setProperties(this.deviceName,allParameters);
 
-      this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
+    const treatmentParametersStr = `${this.deviceName}:\n` +  `\u202Bתוכנית: ${this.parameters.selectedProcedure}, ערך: ${this.parameters.parameterValue} ,`
+      + super.updateTreatmetProperties();
+
+    this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 
   public initializeParameters(): void{

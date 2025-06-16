@@ -21,8 +21,9 @@ export class EndimedComponent extends DeviceComponent<EndimedParameters[]> imple
   }
 
   public saveParameters(): void{
-    const allParameters = {...this.parameters, material: this.material};
-    this.treatmentDataService.setProperties(this.deviceName,allParameters);
+    const allParameters = { parameters: this.parameters, material: this.material };
+    this.treatmentDataService.setProperties(this.deviceName, allParameters);
+
     const treatmentParametersStr = `${this.deviceName}:\n` +
       this.parameters
         .map(procedure => `\u202B ידית: ${procedure.handle} רמה: ${procedure.level}`)

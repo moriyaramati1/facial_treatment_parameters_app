@@ -25,6 +25,7 @@ export class TreatmentDataService {
   public patientName: string = '';
   public userName: string = '';
   public selectedDevices: Type<DeviceComponent<any>>[] = [];
+  public currentComponentIndex: number = 0;
 
 
   public getProperties(deviceName: DeviceNames) :any | undefined {

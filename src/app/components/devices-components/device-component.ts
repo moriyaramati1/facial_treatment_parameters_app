@@ -17,7 +17,7 @@ export abstract class DeviceComponent<TParams> implements OnInit{
       }
       else {
         this.material = allTreatmentParameters.material;
-        this.parameters = allTreatmentParameters as TParams;
+        this.parameters = allTreatmentParameters.parameters as TParams;
       }
     }
 
