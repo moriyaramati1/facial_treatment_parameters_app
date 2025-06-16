@@ -1,23 +1,22 @@
-<div class="d-flex align-items-center w-50">
-  <mat-grid-list class="w-50" cols="6" rowHeight="200" >
+<div class="container py-4">
+  <div class="row g-5">
     @for (device of devices; track device) {
-      <div (click)=treatmentDataService.updateSelection(device.name,device.component)>
-        <mat-grid-tile class="w-75"
-                       [colspan]="device.cols"
-                       [rowspan]="device.rows">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+           (click)=treatmentDataService.updateSelection(device.name,device.component)>
+        <div class="card h-100 shadow-sm"
+             [class.selected]="treatmentDataService.isDeviceSelected(device.component)">
+          <img class="card-img-top"
+               style="height: 180px; object-fit: cover;"
+               [src]="device.image"
+               alt="{{ device.name }}">
 
-          <div class="d-flex flex-column align-items-center justify-content-center h-100 m-5" >
-            <img
-              class="object-fit-cover border border-secondary rounded-5 w-50"
-              [src]="device.image"
-              alt="{{ device.name }}">
-            {{ device.name }}
+          <div class="card-body d-flex flex-column">
+            <p class="card-text text-muted">{{ device.name }}</p>
           </div>
-
-        </mat-grid-tile>
+        </div>
       </div>
     }
-  </mat-grid-list>
-</div>
+  </div>
 
-<button type="submit" (click)="moveToDevicesComponent()">Next</button>
+  <button class="btn btn-primary" type="submit" (click)="moveToDevicesComponent()">Next</button>
+</div>

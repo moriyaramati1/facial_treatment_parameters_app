@@ -1,8 +1,15 @@
-<h5>{{ deviceName }}</h5>
-<span>עומק</span>
-<input type="number" [(ngModel)]="parameters.depth">
+<form>
+  <h5 class="form-input-data">{{ deviceName }}</h5>
 
-<div>
-  <span> חומר</span>
-  <input type="text" [(ngModel)]="material"/>
-</div>
+  <div class="form-input-data">
+    <span class="form-label">עומק</span>
+
+    <input class="form-control" type="number" [(ngModel)]="parameters.depth">
+  </div>
+
+  <div class="form-input-data">
+    <span class="form-label"> חומר</span>
+
+    <input class="form-control" type="text" [(ngModel)]="material"/>
+  </div>
+</form>
