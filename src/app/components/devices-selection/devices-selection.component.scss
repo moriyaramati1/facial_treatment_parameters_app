@@ -1,0 +1,17 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.card {
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card.selected {
+  border: 2px solid black; /* Bootstrap primary color */
+  background-color: #e9f5ff;
+}

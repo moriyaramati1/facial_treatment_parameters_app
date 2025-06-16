@@ -58,6 +58,10 @@ export class TreatmentDataService {
     }
   }
 
+  public isDeviceSelected(deviceComponent: Type<DeviceComponent<any>>): boolean {
+    return this.selectedDevices.some(device => device === deviceComponent);
+  }
+
   public getSelectedDevices():Type<DeviceComponent<any>>[]{
     return this.selectedDevices;
   }

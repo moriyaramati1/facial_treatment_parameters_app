@@ -1,6 +1,9 @@
-<h5>{{ deviceName }}</h5>
+<form>
+  <h5 class="form-input-data">{{ deviceName }}</h5>
 
-<div>
-  <span> חומר</span>
-  <input type="text" [(ngModel)]="material"/>
-</div>
+  <div class="form-input-data">
+    <span class="form-label"> חומר</span>
+
+    <input class="form-control" type="text" [(ngModel)]="material"/>
+  </div>
+</form>
