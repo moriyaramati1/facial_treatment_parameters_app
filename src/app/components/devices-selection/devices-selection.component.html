@@ -17,17 +17,14 @@
   <input type="text" [(ngModel)]="treatmentDataService.patientName">
 </div>
 
-<div class="d-flex align-items-center w-50">
-  <mat-grid-list class="w-50" cols="6" rowHeight="200" >
-<div class="container py-4">
-  <div class="row g-5">
+<div class="container px-2 px-sm-4 py-4">
+  <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
     @for (device of devices; track device) {
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4"
-           (click)=treatmentDataService.updateSelection(device.name,device.component)>
-        <div class="card h-100 shadow-sm"
+      <div (click)=treatmentDataService.updateSelection(device.name,device.component)>
+        <div class="card h-100 shadow-sm compact"
              [class.selected]="treatmentDataService.isDeviceSelected(device.component)">
-          <img class="card-img-top"
-               style="height: 120px; object-fit: cover;"
+          <img class="card-img-top w-100 img-fluid"
+               style="height: 100px; object-fit: cover;"
                [src]="device.image"
                alt="{{ device.name }}">
 
@@ -37,7 +34,6 @@
         </div>
       </div>
     }
-
   </div>
 
   <button class="btn btn-primary" type="submit" (click)="moveToDevicesComponent()">Next</button>
