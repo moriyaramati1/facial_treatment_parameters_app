@@ -1,8 +1,8 @@
-import {AndimedHandlers, HifuHandles} from "src/app/models/handles";
+import {EndimedHandlers, HifuHandles} from "src/app/models/handles";
 import {GuinotProcedures, PlasmaFractionalTechnics, PlasmaProcedures} from "./procedures-types";
 
-export interface AndimedParameters {
-    handle?: AndimedHandlers ,
+export interface EndimedParameters {
+    handle?: EndimedHandlers ,
     level?: number,
 }
 

@@ -13,7 +13,7 @@ import { GuinotComponent } from 'src/app/components/devices-components/devices/g
 import { RinnovaComponent } from 'src/app/components/devices-components/devices/rinnova/rinnova.component';
 import { ApolloDuetComponent } from 'src/app/components/devices-components/devices/apollo-duet/apollo-duet.component';
 import { PlasmaComponent } from 'src/app/components/devices-components/devices/plasma/plasma.component';
-import { AndimedComponent } from 'src/app/components/devices-components/devices/andimed/andimed.component';
+import { EndimedComponent } from 'src/app/components/devices-components/devices/endimed/endimed.component';
 import { Device } from 'src/app/models/device-selection';
 
 @Injectable({
@@ -82,7 +82,7 @@ export class TreatmentDataService {
 
       {name: DeviceNames.APOLLO_DUET, cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: ApolloDuetComponent},
       {name: DeviceNames.PLASMA, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: PlasmaComponent},
-      {name: DeviceNames.ANDIMED, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: AndimedComponent},
+      {name: DeviceNames.ENDIMED, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: EndimedComponent},
 
     ];
     return devices;

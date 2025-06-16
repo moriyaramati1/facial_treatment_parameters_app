@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceNames } from 'src/app/models/devices-names';
-import { AndimedHandlers } from 'src/app/models/handles';
-import { AndimedParameters } from 'src/app/models/devices-parameters';
+import { EndimedHandlers } from 'src/app/models/handles';
+import { EndimedParameters } from 'src/app/models/devices-parameters';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 
 @Component({
-  selector: 'app-andimed',
+  selector: 'app-endimed',
   imports: [CommonModule, FormsModule],
-    templateUrl: './andimed.component.html',
-  styleUrl: './andimed.component.scss'
+    templateUrl: './endimed.component.html',
+  styleUrl: './endimed.component.scss'
 })
-export class AndimedComponent extends DeviceComponent<AndimedParameters[]> implements OnInit{
-  public andimedHandlers = AndimedHandlers;
+export class EndimedComponent extends DeviceComponent<EndimedParameters[]> implements OnInit{
+  public endimedHandlers = EndimedHandlers;
 
   public override ngOnInit(): void {
-      this.deviceName = DeviceNames.ANDIMED;
+      this.deviceName = DeviceNames.ENDIMED;
       super.ngOnInit();
   }
 

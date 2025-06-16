@@ -1,7 +1,7 @@
 
 export enum DeviceNames {
   PLASMA = 'פלזמה',
-  ANDIMED = 'אנדימד',
+  ENDIMED = 'אנדימד',
   APOLLO_DUET = 'אפולו דואט',
   RINNOVA= 'רינובה',
   SONNEXT = 'סונקסט',

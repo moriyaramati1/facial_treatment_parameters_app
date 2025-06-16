@@ -8,7 +8,7 @@ import {GuinotComponent} from 'src/app/components/devices-components/devices/gui
 import {SonnextComponent} from 'src/app/components/devices-components/devices/sonnext/sonnext.component';
 import {RinnovaComponent} from 'src/app/components/devices-components/devices/rinnova/rinnova.component';
 import {ApolloDuetComponent} from 'src/app/components/devices-components/devices/apollo-duet/apollo-duet.component';
-import {AndimedComponent} from 'src/app/components/devices-components/devices/andimed/andimed.component';
+import {EndimedComponent} from 'src/app/components/devices-components/devices/endimed/endimed.component';
 import {PlasmaComponent} from 'src/app/components/devices-components/devices/plasma/plasma.component';
 import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 import {MicroneedlingComponent} from 'src/app/components/devices-components/devices/microneedling/microneedling.component';
@@ -41,7 +41,7 @@ export class DevicesLoaderComponent implements OnInit {
     // RinnovaComponent,
     // ApolloDuetComponent,
     // PlasmaComponent,
-    // AndimedComponent
+    // EndimedComponent
   ];
     @ViewChild(DevicesLoader)
     public dynamicHost!: DevicesLoader;

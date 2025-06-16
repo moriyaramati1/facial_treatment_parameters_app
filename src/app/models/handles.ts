@@ -1,5 +1,5 @@
 
-export enum AndimedHandlers {
+export enum EndimedHandlers {
   Intensif = 'INTENSIF',
   Fsr = 'FSR',
   Small = 'SMALL',

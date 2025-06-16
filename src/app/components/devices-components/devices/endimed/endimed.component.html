@@ -6,7 +6,7 @@
       <span class="form-label">ידית</span>
 
       <select class="form-control" [(ngModel)]="parameter.handle">
-        @for (handle of andimedHandlers | keyvalue ; track handle.key) {
+        @for (handle of endimedHandlers | keyvalue ; track handle.key) {
           <option [value]="handle.value">{{handle.value}}</option>
         }
       </select>
