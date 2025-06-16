@@ -1,3 +1,22 @@
+
+@if(users){
+  <div>
+    <label> שם העובדת</label>
+    <select class="form-control" [(ngModel)]="userName">
+      @for(user of users; track $index){
+        <option [value]="user">
+            {{ user }}
+        </option>
+      }
+    </select>
+  </div>
+}
+
+<div>
+  <label>שם הלקוחה</label>
+  <input type="text" [(ngModel)]="treatmentDataService.patientName">
+</div>
+
 <div class="d-flex align-items-center w-50">
   <mat-grid-list class="w-50" cols="6" rowHeight="200" >
     @for (device of devices; track device) {
@@ -19,5 +38,4 @@
     }
   </mat-grid-list>
 </div>
-
 <button type="submit" (click)="moveToDevicesComponent()">Next</button>
