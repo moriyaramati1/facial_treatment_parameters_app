@@ -37,5 +37,5 @@
     }
   </div>
 
-  <button class="gold-outline-button" type="submit" (click)="moveToDevicesComponent()">Next</button>
+  <button class="gold-outline-button" type="submit" (click)="moveToDevicesComponent()" [disabled]="!treatmentDataService.selectedDevices.length">Next</button>
 </div>

@@ -29,20 +29,7 @@ import {TreatmentDataService} from 'src/app/services/treatment-data.service';
   styleUrl: './devices-loader.component.scss'
 })
 export class DevicesLoaderComponent implements OnInit {
-  public selectedComponents: Type<DeviceComponent<any>>[] = [
-    // BioMicroneedlingComponent,
-    // FractionalPlasmaComponent,
-    // MicroneedlingComponent,
-    // PortiaComponent,
-    // HifuComponent,
-    // WishComponent,
-    // SonnextComponent,
-    // GuinotComponent,
-    // RinnovaComponent,
-    // ApolloDuetComponent,
-    // PlasmaComponent,
-    // EndimedComponent
-  ];
+  public selectedComponents: Type<DeviceComponent<any>>[] = [];
     @ViewChild(DevicesLoader)
     public dynamicHost!: DevicesLoader;
 
@@ -53,18 +40,14 @@ export class DevicesLoaderComponent implements OnInit {
     public treatmentDataService = inject(TreatmentDataService);
 
     public ngOnInit(){
-      this.selectedComponents = this.treatmentDataService.getSelectedDevices();
+      this.selectedComponents = this.treatmentDataService.selectedDevices;
     }
 
-  public moveToNextComponent(form: NgForm){
-      if (form.valid) {
-        this.dynamicHost.activateParmeterSaving();
-        this.currentComponentIndex += 1 ;
-        if (this.currentComponentIndex > this.selectedComponents.length -1){
+    public moveToNextComponent(form: NgForm){
+      this.dynamicHost.activateParameterSaving();
+      this.currentComponentIndex += 1 ;
+      if (this.currentComponentIndex > this.selectedComponents.length -1){
           this.router.navigate(['/final-stage'])
-        }
-      } else {
-        alert('fill props') // todo: not working...
       }
     }
 

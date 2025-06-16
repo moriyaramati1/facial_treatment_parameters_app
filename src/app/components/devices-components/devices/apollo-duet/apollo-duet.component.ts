@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {DeviceComponent} from 'src/app/components/devices-components/device-component';
-
 import {ApolloDuetParameters} from 'src/app/models/devices-parameters';
 import {DeviceNames} from 'src/app/models/devices-names';
 
@@ -22,10 +21,10 @@ export class ApolloDuetComponent extends DeviceComponent<ApolloDuetParameters[]>
   public saveParameters(): void{
       const allParameters = {...this.parameters, material: this.material};
       this.treatmentDataService.setProperties(this.deviceName,allParameters);
-      const treatmentParametersStr = `${this.deviceName}:\n` +
+      const treatmentParametersStr = `\u202B ${this.deviceName}:\n` +
       this.parameters
         .map(procedure => `\u202B תוכנית: ${procedure.procedureName} עוצמה: ${procedure.intensity} טמפרטורה: ${procedure.temperature}`)
-        .join(',\n') + super.updateTreatmetProperties();
+        .join('\n') + super.updateTreatmetProperties();
       console.log(treatmentParametersStr)
       this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
@@ -44,7 +43,6 @@ export class ApolloDuetComponent extends DeviceComponent<ApolloDuetParameters[]>
     maxIntensity: 6,
     temperature: undefined,
     maxTemperature: 45 }]
-    console.log('apoplo',this.parameters)
 
   }
 }

@@ -20,7 +20,7 @@ export class RinnovaComponent extends DeviceComponent<RinnovaParameters> impleme
   public saveParameters(): void{
       const allParameters = {...this.parameters, material: this.material};
       this.treatmentDataService.setProperties(this.deviceName,allParameters);
-      const treatmentParametersStr = `${this.deviceName}:\n` +  `\u202B תוכנית: ${this.parameters.procedureName}\n ערך: ${this.parameters.procedureValue},
+      const treatmentParametersStr = `${this.deviceName}:\n` +  `\u202Bתוכנית: ${this.parameters.procedureName}\n ערך: ${this.parameters.procedureValue}
       צפיפות: ${this.parameters.density}\n אנרגיה:${this.parameters.energy} `
       + super.updateTreatmetProperties();
       console.log(treatmentParametersStr)

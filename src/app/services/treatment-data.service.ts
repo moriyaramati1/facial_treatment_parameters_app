@@ -20,11 +20,12 @@ import { Device } from 'src/app/models/device-selection';
   providedIn: 'root'
 })
 export class TreatmentDataService {
-  private selectedDevices: Type<DeviceComponent<any>>[] = [];
   private devicesData: Map<DeviceNames,string> = new Map<DeviceNames, string>();
   private devicesProperties: Map<DeviceNames, object> = new Map<DeviceNames, object>();
   public patientName: string = '';
   public userName: string = '';
+  public selectedDevices: Type<DeviceComponent<any>>[] = [];
+
 
   public getProperties(deviceName: DeviceNames) :any | undefined {
     return this.devicesProperties.get(deviceName);
@@ -35,7 +36,7 @@ export class TreatmentDataService {
       employee:this.userName,
       name: this.patientName,
       date: new Date().toLocaleDateString(),
-      data:Array.from(this.devicesData.values()).join('\n')
+      data: Array.from(this.devicesData.values()).join('\n\n')
     }
   }
 
@@ -60,10 +61,6 @@ export class TreatmentDataService {
 
   public isDeviceSelected(deviceComponent: Type<DeviceComponent<any>>): boolean {
     return this.selectedDevices.some(device => device === deviceComponent);
-  }
-
-  public getSelectedDevices():Type<DeviceComponent<any>>[]{
-    return this.selectedDevices;
   }
 
   public getDevicesForSelection(){
