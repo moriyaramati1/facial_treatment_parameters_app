@@ -16,7 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 export class DevicesSelectionComponent implements OnInit {
   public devices: Device[] = [];
-  public users?: string[] ;
+  public users?: string[];
 
 
   public treatmentDataService: TreatmentDataService = inject(TreatmentDataService);
@@ -28,12 +28,9 @@ export class DevicesSelectionComponent implements OnInit {
     this.devices = this.treatmentDataService.getDevicesForSelection();
 
     if (currentUser) {
-      console.log('currentUser',currentUser)
       this.treatmentDataService.userName = currentUser;
     } else {
-      this.getEmployeeService.fetchEmployees().subscribe(employees => {
-        this.users = employees;
-      });
+      this.loadUsers();
     }
   }
 
@@ -46,5 +43,15 @@ export class DevicesSelectionComponent implements OnInit {
     this.router.navigate(['/devices']);
   }
 
-  protected readonly length = length;
+  private loadUsers() {
+    this.getEmployeeService.fetchEmployees().subscribe(employees => {
+      this.users = employees;
+    });
+  }
+
+  public logOut(){
+    this.treatmentDataService.userName = '';
+    localStorage.removeItem('user');
+    this.loadUsers();
+  }
 }
