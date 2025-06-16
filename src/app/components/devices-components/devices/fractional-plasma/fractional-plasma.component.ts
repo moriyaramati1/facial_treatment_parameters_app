@@ -36,7 +36,6 @@ export class FractionalPlasmaComponent extends DeviceComponent<PlasmaFractionalP
       this.parameters.technics
         .map(technic => `\u202B ${technic}`)
         .join(',')  + super.updateTreatmetProperties()
-    console.log(`${treatmentParametersStr}`);
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 
