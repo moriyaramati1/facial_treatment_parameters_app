@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import {DeviceComponent} from 'src/app/components/devices-components/device-component';
 import {DeviceNames} from 'src/app/models/devices-names';
 import {BioMicroneedlingParameters} from 'src/app/models/devices-parameters';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-biomicroneedling',
   imports: [
-    ReactiveFormsModule,
     FormsModule
   ],
   templateUrl: './biomicroneedling.component.html',
@@ -20,10 +19,11 @@ export class BioMicroneedlingComponent extends DeviceComponent<BioMicroneedlingP
   }
 
   public saveParameters(): void{
-    const allParameters = {...this.parameters, material: this.material};
+    const allParameters = { parameters: this.parameters, material: this.material };
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
-    const treatmentParametersStr = `\u202B ${this.deviceName}:\n סוג: ${this.parameters.type}` + super.updateTreatmetProperties();
-    console.log(`${treatmentParametersStr}`);
+
+    const treatmentParametersStr = `\u202B ${this.deviceName}:\n \u200Fסוג: ${this.parameters.type}` + super.updateTreatmetProperties();
+
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 
@@ -32,5 +32,4 @@ export class BioMicroneedlingComponent extends DeviceComponent<BioMicroneedlingP
       type: undefined,
     }
   }
-
 }

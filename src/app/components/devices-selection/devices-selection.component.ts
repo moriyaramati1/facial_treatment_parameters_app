@@ -54,4 +54,6 @@ export class DevicesSelectionComponent implements OnInit {
     localStorage.removeItem('user');
     this.loadUsers();
   }
+
+  protected readonly length = length;
 }

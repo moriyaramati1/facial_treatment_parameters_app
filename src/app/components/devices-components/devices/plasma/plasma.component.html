@@ -4,7 +4,7 @@
   <span class="form-label">תוכנית </span>
 
   @for (procedure of plasmaProcedures | keyvalue ; track procedure.key) {
-    <button class="form-control mb-1" (click)="parameters.selectedProcedure=procedure.value">
+    <button type="button" class="form-control mb-1" (click)="parameters.selectedProcedure=procedure.value">
       {{procedure.value}}
     </button>
   }

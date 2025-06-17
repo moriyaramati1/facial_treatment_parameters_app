@@ -4,7 +4,6 @@ import {PlasmaFractionalParameters} from 'src/app/models/devices-parameters';
 import {DeviceNames} from 'src/app/models/devices-names';
 import {PlasmaFractionalTechnics} from 'src/app/models/procedures-types';
 import {KeyValuePipe} from '@angular/common';
-import {MatFormField} from '@angular/material/input';
 import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
@@ -13,7 +12,6 @@ import {FormsModule} from '@angular/forms';
   selector: 'app-fractional-plasma',
   imports: [
     KeyValuePipe,
-    MatFormField,
     MatOption,
     MatSelect,
     FormsModule,
@@ -30,13 +28,14 @@ export class FractionalPlasmaComponent extends DeviceComponent<PlasmaFractionalP
   }
 
   public saveParameters(): void{
-    const allParameters = {...this.parameters, material: this.material};
+    const allParameters = { parameters: this.parameters, material: this.material };
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
+
     const treatmentParametersStr = `\u202B ${this.deviceName}:\n תוכניות:` +
       this.parameters.technics
         .map(technic => `\u202B ${technic}`)
         .join(',')  + super.updateTreatmetProperties()
-    console.log(`${treatmentParametersStr}`);
+
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 

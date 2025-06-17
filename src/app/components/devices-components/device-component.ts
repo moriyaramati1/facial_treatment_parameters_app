@@ -17,15 +17,13 @@ export abstract class DeviceComponent<TParams> implements OnInit{
       }
       else {
         this.material = allTreatmentParameters.material;
-        this.parameters = allTreatmentParameters as TParams;
+        this.parameters = allTreatmentParameters.parameters as TParams;
       }
     }
 
-  public updateTreatmetProperties():string {
-     if(this.material){
-       console.log('this.material',this.material)
-
-       return `\n \u202B חומר: ${this.material}`
+    public updateTreatmetProperties():string {
+       if(this.material){
+       return `\n\u202B חומר: ${this.material}`
       }
        return ''
     }

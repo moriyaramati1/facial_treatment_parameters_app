@@ -7,7 +7,8 @@ import {DeviceComponent} from 'src/app/components/devices-components/device-comp
 })
 export class DevicesLoader {
  public component: InputSignal<Type<DeviceComponent<any>> | undefined> =
-    input<Type<DeviceComponent<any>> | undefined>(undefined);  public componentRef!: ComponentRef<any>;
+    input<Type<DeviceComponent<any>> | undefined>(undefined);
+ public componentRef!: ComponentRef<any>;
 
   constructor(public viewContainerRef: ViewContainerRef){
     effect(()=>{
@@ -19,7 +20,7 @@ export class DevicesLoader {
     })
   }
 
-   public activateParmeterSaving() {
+   public activateParameterSaving() {
     const instance = this.componentRef?.instance;
     return instance.saveParameters()
   }

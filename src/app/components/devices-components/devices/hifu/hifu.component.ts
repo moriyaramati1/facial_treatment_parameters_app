@@ -58,14 +58,15 @@ export class HifuComponent extends DeviceComponent<HifuParameters>{
   }
 
   public saveParameters(): void{
-    const allParameters = {...this.parameters, material: this.material};
+    const allParameters = { parameters: this.parameters, material: this.material };
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
-    const treatmentParametersStr = `\u202B ${this.deviceName}:\n ידיות:` +
+
+    const treatmentParametersStr = `\u202B ${this.deviceName}:\nידיות:` +
       this.parameters.handles
         .map(handle => `\u202B ${handle}`)
         .join(',') +
-    `\n עוצמה: ${this.parameters.intensity} ` + super.updateTreatmetProperties()
-    console.log(`${treatmentParametersStr}`);
+    `\n עוצמה: ${this.parameters.intensity}` + super.updateTreatmetProperties()
+
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 

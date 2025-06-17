@@ -25,14 +25,15 @@ export class WishComponent extends DeviceComponent<WishParameters>{
   }
 
   public saveParameters(): void{
-    const allParameters = {...this.parameters, material: this.material};
+    const allParameters = { parameters: this.parameters, material: this.material };
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
+
     const treatmentParametersStr = `\u202B ${this.deviceName}:\n` +
       `קפסולה: ${this.parameters.capsule}\n ראשים:` +
       this.parameters.head
         .map(head => `\u202B ${head}`)
         .join(',') + super.updateTreatmetProperties();
-    console.log(`${treatmentParametersStr}`);
+
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 
