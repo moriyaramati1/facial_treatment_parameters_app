@@ -1,11 +1,12 @@
 
 
-<div class="container px-2 px-sm-4 py-4">
+<div class="container">
   <button type="button" class="bi bi-box-arrow-right border-0 rounded-1 bg-dark text-white bi-align-center" (click)="logOut()"></button>
 
   @if(users){
-    <div class="d-flex justify-content-md-end gap-2" dir="ltr">
-      <label> שם העובדת</label>
+    <div class="d-flex flex-column align-items-end mb-1" dir="ltr">
+      <label class="form-label"> שם העובדת</label>
+
       <select class="form-control" [(ngModel)]="userName">
         @for(user of users; track $index){
           <option [value]="user">
@@ -16,9 +17,10 @@
     </div>
   }
 
-  <div class="d-flex justify-content-md-end gap-2" dir="ltr">
-    <label>שם הלקוחה</label>
-    <input class="form-input-data" type="text" [(ngModel)]="treatmentDataService.patientName">
+  <div class="d-flex flex-column align-items-end mb-4" dir="ltr">
+    <label class="form-label">שם הלקוחה</label>
+
+    <input class="form-control" type="text" [(ngModel)]="treatmentDataService.patientName">
   </div>
 
   <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
@@ -27,7 +29,7 @@
         <div class="card h-100 shadow-sm compact"
              [class.selected]="treatmentDataService.isDeviceSelected(device.component)">
           <img class="card-img-top img-fluid"
-               style="height: 130px; width: 130px ;object-fit: cover;"
+               style="height: 130px; width: 130px ;object-fit: cover; border-radius: 4px;"
                [src]="device.image"
                alt="{{ device.name }}">
 
