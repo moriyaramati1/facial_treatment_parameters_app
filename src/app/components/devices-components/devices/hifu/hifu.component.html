@@ -3,13 +3,15 @@
 <div class="form-input-data">
   <label class="form-label">בחרי ידיות</label>
 
-  <mat-select class="form-control bg-white" [multiple]="true" [(value)]="parameters.handles" (selectionChange)="computeRequired()">
-    @for(handle of hifuHandles | keyvalue; track handle.key){
-      <mat-option class="bg-white" [value]="handle.value">
-        {{handle.value}}
-      </mat-option>
-    }
-  </mat-select>
+  <mat-form-field appearance="fill">
+    <mat-select [multiple]="true" [(value)]="parameters.handles" (selectionChange)="computeRequired()">
+      @for(handle of hifuHandles | keyvalue; track handle.key){
+        <mat-option class="bg-white" [value]="handle.value">
+          {{handle.value}}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
 </div>
 
 <div class="form-input-data">

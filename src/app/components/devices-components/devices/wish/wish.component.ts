@@ -11,7 +11,7 @@ import {DeviceComponent} from 'src/app/components/devices-components/device-comp
 
 @Component({
   selector: 'app-wish',
-  imports: [FormsModule, KeyValuePipe, MatOption, MatSelect],
+  imports: [FormsModule, KeyValuePipe, MatOption, MatSelect, MatFormField],
   templateUrl: './wish.component.html',
   styleUrl: './wish.component.scss'
 })

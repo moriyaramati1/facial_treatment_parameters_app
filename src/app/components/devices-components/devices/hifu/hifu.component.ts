@@ -3,11 +3,12 @@ import {HifuParameters} from 'src/app/models/devices-parameters';
 import {DeviceNames} from 'src/app/models/devices-names';
 import {BoosterHandlers, HifuHandles} from 'src/app/models/handles';
 import {KeyValuePipe} from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormField} from '@angular/material/input';
 import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import {DeviceComponent} from 'src/app/components/devices-components/device-component';
+import {ReplaySubject, takeUntil} from 'rxjs';
 
 @Component({
   selector: 'app-hifu',
@@ -17,7 +18,7 @@ import {DeviceComponent} from 'src/app/components/devices-components/device-comp
     ReactiveFormsModule,
     MatOption,
     MatSelect,
-    MatFormField
+    MatFormField,
   ],
   templateUrl: './hifu.component.html',
   styleUrl: './hifu.component.scss'
@@ -26,9 +27,34 @@ export class HifuComponent extends DeviceComponent<HifuParameters>{
   public hifuHandles = HifuHandles;
   public materialRequired: boolean = false;
 
+  handlesList = Object.entries(this.hifuHandles).map(([key, value]) => ({
+    key,
+    value,
+  }));
+  handlesCtrl = new FormControl([]);
+  handlesFilterCtrl = new FormControl('');
+
+  filteredHandles: ReplaySubject<any[]> = new ReplaySubject(1);
+
   public override ngOnInit(): void {
     this.deviceName = DeviceNames.HIFU;
     super.ngOnInit();
+
+    this.filteredHandles.next(this.handlesList);
+
+    this.handlesFilterCtrl.valueChanges.pipe(takeUntil(new ReplaySubject())).subscribe(() => {
+      const search = this.handlesFilterCtrl.value?.toLowerCase() || '';
+      this.filteredHandles.next(
+        this.handlesList.filter(h =>
+          h.value.toString().toLowerCase().includes(search)
+        )
+      );
+    });
+  }
+
+  public get handelOptions() {
+    console.log("", Object.entries(this.hifuHandles).map(([key, value]) => key))
+    return Object.entries(this.hifuHandles).map(([key, value]) => key);
   }
 
   public saveParameters(): void{
