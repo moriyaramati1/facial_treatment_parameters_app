@@ -53,3 +53,9 @@
 .btn-secondary {
   background-color: black;
 }
+
+.form-control:focus {
+  border-color: #C5B358;
+  box-shadow: 0 0 .25rem #CFB53B, -.125rem -.125rem 1rem #FAFAD2, .125rem .125rem 1rem #F0E68C;
+}
+

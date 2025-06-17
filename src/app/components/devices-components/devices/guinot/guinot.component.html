@@ -3,11 +3,13 @@
 <div class="form-input-data">
   <span class="form-label">תוכנית</span>
 
-  <select class="form-control" [(ngModel)]="parameters.selectedProcedure">
-    @for (procedure of guinotProcedures | keyvalue ; track procedure.key) {
-      <option [value]="procedure.value">{{procedure.value}}</option>
-    }
-  </select>
+  <mat-form-field appearance="fill">
+    <mat-select [(ngModel)]="parameters.selectedProcedure">
+      @for (procedure of guinotProcedures | keyvalue ; track procedure.key) {
+        <mat-option class="bg-white" [value]="procedure.value">{{procedure.value}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
 </div>
 
 <div class="form-input-data">

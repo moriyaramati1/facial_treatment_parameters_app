@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {GuinotParameters} from 'src/app/models/devices-parameters';
 import {DeviceComponent} from 'src/app/components/devices-components/device-component';
+import {MatFormField} from '@angular/material/input';
+import {MatOption, MatSelect} from '@angular/material/select';
 
 @Component({
   selector: 'app-guinot',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule, MatFormField, MatSelect, MatOption],
   templateUrl: './guinot.component.html',
   styleUrl: './guinot.component.scss'
 })
