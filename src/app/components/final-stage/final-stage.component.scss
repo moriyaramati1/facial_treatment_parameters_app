@@ -1,0 +1,12 @@
+.send-button {
+  background-image:
+    linear-gradient(to right, #fdde5c, #C5B358, #FAFAD2, #F0E68C, #CFB53B);
+  color: black;
+
+  &:hover {
+    box-shadow: 0 0 .25rem #CFB53B,
+    -.125rem -.125rem 1rem #FAFAD2,
+    .125rem .125rem 1rem #F0E68C;
+    transform: scale(1.01);
+  }
+}

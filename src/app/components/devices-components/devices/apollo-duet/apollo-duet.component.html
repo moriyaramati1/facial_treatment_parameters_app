@@ -1,21 +1,23 @@
 <h5 class="form-input-data">{{ deviceName }}</h5>
 
-@for (procedure of parameters; track $index){
-  <p class="form-input-data">{{procedure.procedureName}}</p>
-  <div class="form-input-data d-flex flex-row">
-    <div class="form-input-data ms-2">
-      <span class="form-label">אינטנסיטי </span>
+<div>
+  @for (procedure of parameters; track $index){
+    <p class="form-input-data">{{procedure.procedureName}}</p>
+    <div class="form-input-data d-flex flex-row m-0">
+      <div class="form-input-data ms-2">
+        <span class="form-label">אינטנסיטי </span>
 
-      <input class="form-control" type="number" [max]="procedure.maxIntensity" [(ngModel)]="procedure.intensity">
+        <input class="form-control" type="number" [max]="procedure.maxIntensity" [(ngModel)]="procedure.intensity">
+      </div>
+
+      <div class="form-input-data">
+        <span class="form-label">טמפרטורה </span>
+
+        <input class="form-control" type="number" [max]="procedure.maxTemperature" [(ngModel)]="procedure.temperature">
+      </div>
     </div>
-
-    <div class="form-input-data">
-      <span class="form-label">טמפרטורה </span>
-
-      <input class="form-control" type="number" [max]="procedure.maxTemperature" [(ngModel)]="procedure.temperature">
-    </div>
-  </div>
-}
+  }
+</div>
 
 <div class="form-input-data">
   <span class="form-label">חומר </span>

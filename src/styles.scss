@@ -13,34 +13,33 @@
   margin-bottom: 5%;
 }
 
-.gold-outline-button {
-   padding: 8px 20px;
-   font-size: 16px;
-   font-weight: bold;
-   color: black;
-   background-color: white;
-   border-radius: 30px;
+.gold-button {
+    width: 75px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    border: 3.5px solid transparent;
+    border-radius: 10px;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
 
+.gold-next-button {
+  background-image:
+    linear-gradient(white, white),
+    linear-gradient(to right, #fdde5c, #C5B358, #FAFAD2, #F0E68C, #CFB53B);
+  color: black;
 
-  border-image: linear-gradient(
-       to right,
-       #CFB53B,
-       #C5B358,
-       #FAFAD2,
-       #F0E68C,
-       #D4AF37,
-       #F0E68C,
-       #CFB53B
-   );
-   border-image-slice: 1;
-   cursor: pointer;
-   transition: background-color 0.3s ease, color 0.3s ease;
-
-   &:hover {
-     box-shadow: 0 0 .25rem #CFB53B, -.125rem -.125rem 1rem #FAFAD2, .125rem .125rem 1rem #F0E68C;
-     transform: scale(1.01);
-   }
- }
+  &:hover {
+    box-shadow: 0 0 .25rem #CFB53B,
+    -.125rem -.125rem 1rem #FAFAD2,
+    .125rem .125rem 1rem #F0E68C;
+    transform: scale(1.01);
+  }
+}
 
 .mat-pseudo-checkbox {
   order: 1;
