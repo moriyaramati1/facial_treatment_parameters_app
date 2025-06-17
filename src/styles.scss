@@ -17,7 +17,7 @@
    font-weight: bold;
    color: black;
    background-color: white;
-   border-radius: 25px;
+   border-radius: 30px;
 
 
   border-image: linear-gradient(
@@ -39,3 +39,11 @@
      transform: scale(1.01);
    }
  }
+
+.mat-pseudo-checkbox {
+  order: 1;
+}
+
+.mdc-list-item__primary-text {
+  margin: auto;
+}
