@@ -15,14 +15,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 export class PortiaComponent extends DeviceComponent<undefined> implements OnInit {
   public override ngOnInit(): void {
     this.deviceName = DeviceNames.PORTIA;
+    super.ngOnInit();
   }
 
   public saveParameters(): void{
     const treatmentParametersStr = `\u202B ${this.deviceName}:` + super.updateTreatmetProperties();
-    console.log(`${treatmentParametersStr}`);
+    this.treatmentDataService.setProperties(this.deviceName, { material: this.material});
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 
-  public initializeParameters(): void{ }
+  public initializeParameters(): void{}
 
 }

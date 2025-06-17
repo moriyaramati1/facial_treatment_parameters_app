@@ -1,14 +1,14 @@
-<form>
+<form c>
   <h5>סיכום טיפול</h5>
   <div class="">
     <div class="form-input-data ms-2">
       <span class="form-label" >תגובת העור</span>
-      <input class="form-control" type="text" [(ngModel)]="treatmentDataService.treatmentReport.reaction">
+      <input class="form-control" name="reaction" type="text" [(ngModel)]="treatmentDataService.treatmentReport.reaction">
     </div>
 
     <div class="form-input-data ms-2">
       <span class="form-label" >מאלחש</span>
-      <input class="form-control" type="text" [(ngModel)]="treatmentDataService.treatmentReport.anesthetic">
+      <input class="form-control" name="anesthetic" type="text" [(ngModel)]="treatmentDataService.treatmentReport.anesthetic">
     </div>
 
     <div class="form-input-data ms-2">

@@ -19,10 +19,12 @@ export class FinalStageComponent implements OnInit {
   public isSendEnabled: boolean = false;
 
   public ngOnInit() {
-    this.treatmentDataService.treatmentReport = {
-      notes: '',
-      anesthetic: '',
-      reaction: ''
+    if(!this.treatmentDataService.treatmentReport){
+      this.treatmentDataService.treatmentReport = {
+        notes: '',
+        anesthetic: '',
+        reaction: ''
+      }
     }
   }
 
