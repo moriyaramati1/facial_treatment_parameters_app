@@ -1,5 +1,4 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {DevicesLoaderComponent} from 'src/app/components/devices-components/devices-loader/devices-loader.component';
 import {Router, RouterOutlet} from '@angular/router';
 
 @Component({
