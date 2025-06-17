@@ -1,11 +1,34 @@
+<div class="d-flex justify-content-center align-items-end mt-1">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <h5 class="form-input-data">סיכום טיפול</h5>
 
-<h5>סיכום טיפול</h5>
-<span>תגובת העור</span>
-<input type="text" [(ngModel)]="treatmentDataService.treatmentReport.reaction">
-<span>מאלחש</span>
-<input type="text" [(ngModel)]="treatmentDataService.treatmentReport.anesthetic">
-<span>הערות</span>
-<textarea name="notes" [(ngModel)]="treatmentDataService.treatmentReport.notes"></textarea>
+        <div class="form-input-data">
+          <span class="form-label">תגובת העור</span>
 
-<button class="btn btn-secondary me-1 " (click)="location.back()"> הקודם</button>
-<button (click)="sendData()" [disabled]="isSendEnabled"> שלח </button>
+          <input class="form-control" type="text" [(ngModel)]="treatmentDataService.treatmentReport.reaction">
+        </div>
+
+        <div class="form-input-data">
+          <span class="form-label">מאלחש</span>
+
+          <input class="form-control" type="text" [(ngModel)]="treatmentDataService.treatmentReport.anesthetic">
+        </div>
+
+        <div class="form-input-data">
+          <span class="form-label">הערות</span>
+
+          <textarea class="form-control" name="notes" [(ngModel)]="treatmentDataService.treatmentReport.notes"></textarea>
+        </div>
+
+        <div class="card-footer bg-white mt-5 border-0">
+          <button class="btn btn-primary me-1" (click)="sendData()" [disabled]="isSendEnabled"> שלח </button>
+
+          <button class="btn btn-secondary" (click)="location.back()"> הקודם</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
