@@ -1,11 +1,22 @@
+<form>
+  <h5>סיכום טיפול</h5>
+  <div class="">
+    <div class="form-input-data ms-2">
+      <span class="form-label" >תגובת העור</span>
+      <input class="form-control" type="text" [(ngModel)]="treatmentDataService.treatmentReport.reaction">
+    </div>
 
-<h5>סיכום טיפול</h5>
-<span>תגובת העור</span>
-<input type="text" [(ngModel)]="treatmentDataService.treatmentReport.reaction">
-<span>מאלחש</span>
-<input type="text" [(ngModel)]="treatmentDataService.treatmentReport.anesthetic">
-<span>הערות</span>
-<textarea name="notes" [(ngModel)]="treatmentDataService.treatmentReport.notes"></textarea>
+    <div class="form-input-data ms-2">
+      <span class="form-label" >מאלחש</span>
+      <input class="form-control" type="text" [(ngModel)]="treatmentDataService.treatmentReport.anesthetic">
+    </div>
 
-<button class="btn btn-secondary me-1 " (click)="location.back()"> הקודם</button>
-<button (click)="sendData()" [disabled]="isSendEnabled"> שלח </button>
+    <div class="form-input-data ms-2">
+      <span class="form-label" >הערות</span>
+      <textarea class="form-control" name="notes" [(ngModel)]="treatmentDataService.treatmentReport.notes"></textarea>
+    </div>
+
+      <button class="btn btn-secondary me-1 " (click)="location.back()"> הקודם</button>
+      <button (click)="sendData()" [disabled]="isSendEnabled"> שלח </button>
+   </div>
+</form>
