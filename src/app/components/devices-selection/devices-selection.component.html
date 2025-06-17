@@ -1,16 +1,16 @@
 
 
-<div class="container">
+<div class="container mb-4">
   <button type="button" class="bi bi-box-arrow-right border-0 rounded-1 bg-dark text-white bi-align-center" (click)="logOut()"></button>
 
   <div class="me-5">
     @if(users){
-      <div class="form-input-data" dir="rtl">
+      <div class="d-flex flex-column align-items-end mb-1" dir="ltr">
         <label class="form-label"> שם העובדת</label>
         <mat-form-field appearance="fill">
-          <mat-select class="form-control m-0" [(ngModel)]="userName">
+          <mat-select class="form-control w-75" [(ngModel)]="userName">
             @for(user of users; track $index){
-              <mat-option class="bg-white m-0"  [value]="user">
+              <mat-option class="bg-white"  [value]="user">
                 {{ user }}
               </mat-option>
             }
@@ -23,8 +23,7 @@
     <div class="d-flex flex-column align-items-end mb-4" dir="ltr">
       <label class="form-label">שם הלקוחה</label>
 
-      <input class="form-control border-2 w-50" type="text" [(ngModel)]="treatmentDataService.patientName">
-    </div>
+    <input class="form-control w-75" type="text" [(ngModel)]="treatmentDataService.patientName">
   </div>
 
   <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
