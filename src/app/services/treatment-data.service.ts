@@ -73,20 +73,20 @@ export class TreatmentDataService {
   public getDevicesForSelection(){
     const devices: Device[] = [
       {name: DeviceNames.BIOMICRONEEDLING, cols: 2,rows: 1 , image: 'https://picsum.photos/id/238/400/300',component: BioMicroneedlingComponent},
-      {name: DeviceNames.FRACTIONALPLASMA, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: FractionalPlasmaComponent},
+      {name: DeviceNames.FRACTIONALPLASMA, cols: 2 ,rows: 1 ,image:'assets/images/plasma.png',component: FractionalPlasmaComponent},
       {name: DeviceNames.MICRONEEDLING, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: MicroneedlingComponent},
 
       {name: DeviceNames.PORTIA, cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: PortiaComponent},
-      {name: DeviceNames.HIFU, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: HifuComponent},
-      {name: DeviceNames.WISH, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: WishComponent},
+      {name: DeviceNames.HIFU, cols: 2 ,rows: 1 ,image:'assets/images/hifu.png',component: HifuComponent},
+      {name: DeviceNames.WISH, cols: 2 ,rows: 1 ,image:'assets/images/wish.png',component: WishComponent},
 
-      {name: DeviceNames.SONNEXT, cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: SonnextComponent},
-      {name: DeviceNames.GUINOT, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: GuinotComponent},
+      {name: DeviceNames.SONNEXT, cols: 2,rows: 1 ,  image: 'assets/images/sonnext.png',component: SonnextComponent},
+      {name: DeviceNames.GUINOT, cols: 2 ,rows: 1 ,image:'assets/images/guinot.png',component: GuinotComponent},
       {name: DeviceNames.RINNOVA, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: RinnovaComponent},
 
-      {name: DeviceNames.APOLLO_DUET, cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: ApolloDuetComponent},
+      {name: DeviceNames.APOLLO_DUET, cols: 2,rows: 1 ,  image: 'assets/images/apollo-duet.png',component: ApolloDuetComponent},
       {name: DeviceNames.PLASMA, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: PlasmaComponent},
-      {name: DeviceNames.ENDIMED, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: EndimedComponent},
+      {name: DeviceNames.ENDIMED, cols: 2 ,rows: 1 ,image:'assets/images/endimed.png',component: EndimedComponent},
 
     ];
     return devices;
