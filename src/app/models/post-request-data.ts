@@ -1,6 +1,6 @@
 
 export interface PostInformationBody {
-  employee:string,
+  employee: string;
   name: string;
   date: string;
   data: string;
