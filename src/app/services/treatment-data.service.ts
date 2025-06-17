@@ -35,9 +35,12 @@ export class TreatmentDataService {
   }
 
   public getData(): PostInformationBody{
-    const treatmentReportStr: string = `\n אלחוש: ${this.treatmentReport?.anesthetic} \n
-    תגובת העור: ${this.treatmentReport?.reaction} \n
-     הערות: ${this.treatmentReport?.notes}\n`;
+    const { anesthetic, reaction, notes } = this.treatmentReport || {};
+
+    const treatmentReportStr = '\n' +
+      (anesthetic ? `\n אלחוש: ${anesthetic}` : '') +
+      (reaction ? `\n תגובת העור: ${reaction}` : '') +
+      (notes ? `\n הערות: ${notes}` : '');
 
     return {
       employee:this.userName,

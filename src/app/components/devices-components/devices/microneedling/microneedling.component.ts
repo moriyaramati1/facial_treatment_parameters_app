@@ -24,8 +24,7 @@ export class MicroneedlingComponent extends DeviceComponent<MicroNeedlingParamet
     const allParameters = { parameters: this.parameters, material: this.material };
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
 
-    const treatmentParametersStr = `\u202B ${this.deviceName}:\nעומק: ${this.parameters.depth}`
-      + super.updateTreatmetProperties();
+    const treatmentParametersStr = `\u202B ${this.deviceName}:\n עומק: ${this.parameters.depth}`+ super.updateTreatmetProperties();
 
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }

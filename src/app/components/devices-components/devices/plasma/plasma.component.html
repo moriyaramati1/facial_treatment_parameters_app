@@ -1,4 +1,4 @@
-<h5 class="form-input-data">{{ deviceName }}</h5>
+<h3 class="form-input-data fw-bolder">{{ deviceName }}</h3>
 
 <div class="form-input-data">
   <span class="form-label">תוכנית </span>
@@ -16,6 +16,7 @@
 
     <input class="form-control" type="number"
            min="1" max="10"
+           name="parameter-value"
            [(ngModel)]="parameters.parameterValue">
   </div>
 }
@@ -23,5 +24,5 @@
 <div class="form-input-data">
   <span class="form-label">חומר </span>
 
-  <input class="form-control" type="text" [(ngModel)]="material"/>
+  <input class="form-control" name="material" type="text" [(ngModel)]="material"/>
 </div>

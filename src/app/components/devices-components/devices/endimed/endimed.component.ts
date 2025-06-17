@@ -24,7 +24,7 @@ export class EndimedComponent extends DeviceComponent<EndimedParameters[]> imple
     const allParameters = { parameters: this.parameters, material: this.material };
     this.treatmentDataService.setProperties(this.deviceName, allParameters);
 
-    const treatmentParametersStr = `${this.deviceName}:\n` +
+    const treatmentParametersStr = ` ${this.deviceName}:\n` +
       this.parameters
         .map(procedure => `\u202B ידית: ${procedure.handle} רמה: ${procedure.level}`)
         .join(',\n') + super.updateTreatmetProperties();
