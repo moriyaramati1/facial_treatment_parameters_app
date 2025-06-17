@@ -5,11 +5,14 @@ import {TreatmentDataService} from 'src/app/services/treatment-data.service';
 import {GetEmployeeService} from 'src/app/services/get-employee.service';
 import {Device} from 'src/app/models/device-selection';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatOption} from '@angular/material/core';
+import {MatSelect} from '@angular/material/select';
+import {MatFormField} from '@angular/material/input';
 
 
 @Component({
   selector: 'app-devices-selection',
-  imports: [MatGridListModule, ReactiveFormsModule, FormsModule],
+  imports: [MatGridListModule, ReactiveFormsModule, FormsModule, MatOption, MatSelect, MatFormField],
   templateUrl: './devices-selection.component.html',
   styleUrl: './devices-selection.component.scss'
 })

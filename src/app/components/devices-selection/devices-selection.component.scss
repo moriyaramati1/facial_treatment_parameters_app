@@ -11,7 +11,12 @@ body {
   transform: translateY(-5px);
 }
 
+select.form-control option:hover {
+  background-color: red;
+  color: white;
+}
+
 .card.selected {
   border: 2px solid black; /* Bootstrap primary color */
-  background-color: #e9f5ff;
+  background-color: #faf9e9;
 }

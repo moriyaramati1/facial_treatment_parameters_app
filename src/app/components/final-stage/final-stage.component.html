@@ -7,19 +7,19 @@
         <div class="form-input-data">
           <span class="form-label">תגובת העור</span>
 
-          <input class="form-control" type="text" [(ngModel)]="treatmentDataService.treatmentReport.reaction">
+          <input class="form-control" name="reaction"  type="text" [(ngModel)]="treatmentDataService.treatmentReport.reaction">
         </div>
 
         <div class="form-input-data">
           <span class="form-label">מאלחש</span>
 
-          <input class="form-control" type="text" [(ngModel)]="treatmentDataService.treatmentReport.anesthetic">
+          <input class="form-control" name="anesthetic" type="text" [(ngModel)]="treatmentDataService.treatmentReport.anesthetic">
         </div>
 
         <div class="form-input-data">
           <span class="form-label">הערות</span>
 
-          <textarea class="form-control" name="notes" [(ngModel)]="treatmentDataService.treatmentReport.notes"></textarea>
+          <textarea class="form-control"  name="notes" [(ngModel)]="treatmentDataService.treatmentReport.notes"></textarea>
         </div>
 
         <div class="card-footer bg-white mt-5 border-0">
