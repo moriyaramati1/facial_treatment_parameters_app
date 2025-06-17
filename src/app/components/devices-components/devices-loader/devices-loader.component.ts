@@ -26,10 +26,10 @@ export class DevicesLoaderComponent implements OnInit {
     }
 
     public moveToNextComponent(){
+      this.dynamicHost.activateParameterSaving();
       const nextIndex = this.treatmentDataService.currentComponentIndex + 1;
 
       if (nextIndex < this.selectedComponents.length){
-          this.dynamicHost.activateParameterSaving();
           this.treatmentDataService.currentComponentIndex += 1;
       }
       else {

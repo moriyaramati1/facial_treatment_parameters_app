@@ -46,4 +46,8 @@ export class EndimedComponent extends DeviceComponent<EndimedParameters[]> imple
     })
   }
 
+  public removeParameter(index: number): void{
+    this.parameters.splice(index, 1);
+  }
+
 }

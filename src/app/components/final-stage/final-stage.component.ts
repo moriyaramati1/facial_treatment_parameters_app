@@ -13,13 +13,14 @@ export class FinalStageComponent {
   public location: Location =inject(Location);
   public postInformationService: PostInformationService = inject(PostInformationService);
   public treatmentDataService: TreatmentDataService = inject(TreatmentDataService);
-  public isSendEnabled: boolean = true;
+  public isSendEnabled: boolean = false;
 
   public sendData(): void {
-    this.isSendEnabled = false;
+    this.isSendEnabled = true;
+    console.log('this.treatmentDataService.getData()',this.treatmentDataService.getData())
     this.postInformationService.sendData(this.treatmentDataService.getData())
       .subscribe(response => {
-        this.isSendEnabled = true;
+        this.isSendEnabled = false;
         if (response) {
           alert("הנתונים נשלחו בהצלחה!");
         }

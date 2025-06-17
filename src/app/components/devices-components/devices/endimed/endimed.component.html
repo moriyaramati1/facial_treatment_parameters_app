@@ -1,6 +1,7 @@
 <h5 class="form-input-data">{{ deviceName }}</h5>
 
 @for (parameter of parameters ; track $index) {
+  <span><i class="bi bi-dash-circle-fill" (click)="removeParameter($index)">minus</i></span>
   <div class="d-flex flex-row">
     <div class="form-input-data ms-2">
       <span class="form-label">ידית</span>
