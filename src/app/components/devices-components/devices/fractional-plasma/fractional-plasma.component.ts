@@ -5,7 +5,7 @@ import {DeviceNames} from 'src/app/models/devices-names';
 import {PlasmaFractionalTechnics} from 'src/app/models/procedures-types';
 import {KeyValuePipe} from '@angular/common';
 import {MatOption} from '@angular/material/core';
-import {MatSelect} from '@angular/material/select';
+import {MatFormField, MatSelect} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
 
 @Component({
@@ -15,6 +15,7 @@ import {FormsModule} from '@angular/forms';
     MatOption,
     MatSelect,
     FormsModule,
+    MatFormField,
   ],
   templateUrl: './fractional-plasma.component.html',
   styleUrl: './fractional-plasma.component.scss'
