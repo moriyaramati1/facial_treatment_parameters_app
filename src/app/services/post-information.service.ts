@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, of } from 'rxjs';
-import { PostInformationBody } from 'src/app/models/postRequestData';
+import { PostInformationBody } from 'src/app/models/post-request-data';
 import {SERVER_URL} from 'src/app/app.config';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class PostInformationService {
         "Content-Type": "text/plain",
       }
     }).pipe(
-      catchError(error => {
+      catchError(() => {
         alert("השליחה נכשלה - נא להודיע למזכירה");
         return of(null);
       })

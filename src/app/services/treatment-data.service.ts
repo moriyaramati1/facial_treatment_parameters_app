@@ -1,7 +1,7 @@
 import {Injectable, Type} from '@angular/core';
 import { DeviceNames } from 'src/app/models/devices-names';
 import { DeviceComponent } from 'src/app/components/devices-components/device-component';
-import {PostInformationBody} from 'src/app/models/postRequestData';
+import {PostInformationBody} from 'src/app/models/post-request-data';
 import { BioMicroneedlingComponent } from 'src/app/components/devices-components/devices/biomicroneedling/biomicroneedling.component';
 import { FractionalPlasmaComponent } from 'src/app/components/devices-components/devices/fractional-plasma/fractional-plasma.component';
 import { MicroneedlingComponent } from 'src/app/components/devices-components/devices/microneedling/microneedling.component';
@@ -15,6 +15,7 @@ import { ApolloDuetComponent } from 'src/app/components/devices-components/devic
 import { PlasmaComponent } from 'src/app/components/devices-components/devices/plasma/plasma.component';
 import { EndimedComponent } from 'src/app/components/devices-components/devices/endimed/endimed.component';
 import { Device } from 'src/app/models/device-selection';
+import { TreatmentReport } from 'src/app/models/treatment-report';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,7 @@ export class TreatmentDataService {
   public userName: string = '';
   public selectedDevices: Type<DeviceComponent<any>>[] = [];
   public currentComponentIndex: number = 0;
+  public treatmentReport!: TreatmentReport;
 
 
   public getProperties(deviceName: DeviceNames) :any | undefined {
@@ -33,11 +35,15 @@ export class TreatmentDataService {
   }
 
   public getData(): PostInformationBody{
+    const treatmentReportStr: string = `\n אלחוש: ${this.treatmentReport.anesthetic} \n
+    תגובת העור: ${this.treatmentReport.reaction} \n
+     הערות: ${this.treatmentReport.notes}\n`;
+
     return {
       employee:this.userName,
       name: this.patientName,
       date: new Date().toLocaleDateString(),
-      data: Array.from(this.devicesData.values()).join('\n\n')
+      data: Array.from(this.devicesData.values()).join('\n\n') + treatmentReportStr
     }
   }
 
@@ -66,7 +72,7 @@ export class TreatmentDataService {
 
   public getDevicesForSelection(){
     const devices: Device[] = [
-      {name: DeviceNames.BIOMICRONEEDLING, cols: 2,rows: 1 ,  image: 'https://picsum.photos/id/238/400/300',component: BioMicroneedlingComponent},
+      {name: DeviceNames.BIOMICRONEEDLING, cols: 2,rows: 1 , image: 'https://picsum.photos/id/238/400/300',component: BioMicroneedlingComponent},
       {name: DeviceNames.FRACTIONALPLASMA, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: FractionalPlasmaComponent},
       {name: DeviceNames.MICRONEEDLING, cols: 2 ,rows: 1 ,image:'https://picsum.photos/id/238/400/300',component: MicroneedlingComponent},
 
