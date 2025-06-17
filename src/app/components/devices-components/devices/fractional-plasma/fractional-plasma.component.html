@@ -4,13 +4,15 @@
   <div class="form-input-data">
     <label class="form-label">בחרי ראשים</label>
 
-    <mat-select class="form-control" [multiple]="true" [(value)]="parameters.technics" >
-      @for(technic of  plasmaFractionalTechnics | keyvalue; track technic.key){
-        <mat-option [value]="technic.value">
-          {{technic.value}}
-        </mat-option>
-      }
-    </mat-select>
+    <mat-form-field appearance="fill">
+      <mat-select [multiple]="true" [(value)]="parameters.technics" >
+        @for(technic of  plasmaFractionalTechnics | keyvalue; track technic.key){
+          <mat-option class="bg-white" [value]="technic.value">
+            {{technic.value}}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
   </div>
 
   <div class="form-input-data">

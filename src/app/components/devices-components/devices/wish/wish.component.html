@@ -3,25 +3,29 @@
 <div class="form-input-data">
   <label class="form-label">בחרי ראשים</label>
 
-  <mat-select class="form-control" [multiple]="true" [(value)]="parameters.head" >
-    @for(head of wishHeads | keyvalue; track head.key){
-      <mat-option [value]="head.value">
-        {{head.value}}
-      </mat-option>
-    }
-  </mat-select>
+  <mat-form-field appearance="fill">
+    <mat-select [multiple]="true" [(value)]="parameters.head" >
+      @for(head of wishHeads | keyvalue; track head.key){
+        <mat-option class="bg-white" [value]="head.value">
+          {{head.value}}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
 </div>
 
 <div class="form-input-data">
   <label class="form-label">בחרי קפסולה</label>
 
-  <mat-select class="form-control" [(value)]="parameters.capsule" >
-    @for(capsule of wishCapsules | keyvalue; track capsule.key){
-      <mat-option [value]="capsule.value">
-        {{capsule.value}}
-      </mat-option>
-    }
-  </mat-select>
+  <mat-form-field appearance="fill">
+    <mat-select [(value)]="parameters.capsule" >
+      @for(capsule of wishCapsules | keyvalue; track capsule.key){
+        <mat-option class="bg-white" [value]="capsule.value">
+          {{capsule.value}}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
 </div>
 
 
