@@ -26,8 +26,8 @@
       <div (click)=treatmentDataService.updateSelection(device.name,device.component)>
         <div class="card h-100 shadow-sm compact"
              [class.selected]="treatmentDataService.isDeviceSelected(device.component)">
-          <img class="card-img-top w-100 img-fluid"
-               style="height: 100px; object-fit: cover;"
+          <img class="card-img-top img-fluid"
+               style="height: 130px; width: 130px ;object-fit: cover;"
                [src]="device.image"
                alt="{{ device.name }}">
 
