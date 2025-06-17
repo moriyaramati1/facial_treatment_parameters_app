@@ -5,11 +5,12 @@ import { DeviceNames } from 'src/app/models/devices-names';
 import { FormsModule } from '@angular/forms';
 import { PalsmaParameters } from 'src/app/models/devices-parameters';
 import {DeviceComponent} from 'src/app/components/devices-components/device-component';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 
 @Component({
   selector: 'app-plasma',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,NgSelectModule],
   standalone: true,
   templateUrl: './plasma.component.html',
   styleUrl: './plasma.component.scss'
@@ -39,4 +40,6 @@ export class PlasmaComponent extends DeviceComponent<PalsmaParameters> implement
       parameterValue: undefined,
     }
   }
+
+  protected readonly Object = Object;
 }

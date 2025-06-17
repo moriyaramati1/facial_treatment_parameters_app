@@ -2,9 +2,9 @@
 
 <div class="form-input-data">
   <span class="form-label">תוכנית </span>
-
   @for (procedure of plasmaProcedures | keyvalue ; track procedure.key) {
-    <button type="button" class="form-control mb-1" (click)="parameters.selectedProcedure=procedure.value">
+    <button type="button" [ngClass]="{ 'btn-selected': parameters.selectedProcedure === procedure.value }"
+            class="form-control mb-1" (click)="parameters.selectedProcedure=procedure.value">
       {{procedure.value}}
     </button>
   }
