@@ -29,10 +29,10 @@ export class WishComponent extends DeviceComponent<WishParameters>{
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
 
     const treatmentParametersStr = `\u202B ${this.deviceName}:\n` +
-      `קפסולה: ${this.parameters.capsule}\n ראשים:` +
+       ` קפסולה: ${this.parameters.capsule}\n ראשים:` +
       this.parameters.head
         .map(head => `\u202B ${head}`)
-        .join(',') + super.updateTreatmetProperties();
+        .join(',') + super.updateTreatmentProperties();
 
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }

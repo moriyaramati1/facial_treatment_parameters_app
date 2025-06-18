@@ -1,19 +1,19 @@
-<div class="d-flex justify-content-center mt-1">
-  <div class="card">
+<div class="d-flex justify-content-end mt-1 me-2">
     <div class="card-body">
-      <form ngNativeValidate dir="rtl" #myForm="ngForm" (ngSubmit)="moveToNextComponent()">
-        <div appDynamicChildLoader
-             [component]="selectedComponents[this.treatmentDataService.currentComponentIndex]" >
+      <form ngNativeValidate class="fixed-form" dir="rtl" #myForm="ngForm" (ngSubmit)="moveToNextComponent()">
+        <div class="form-body">
+          <div appDynamicChildLoader
+               [component]="selectedComponents[this.treatmentDataService.currentComponentIndex]" >
+          </div>
         </div>
 
         <div class="card-footer bg-white mt-5 border-0">
-            <button class="btn btn-primary" type="submit" >הבא </button>
+            <button class="btn gold-button gold-next-button ms-2" type="submit" >הבא </button>
 
-            <button class="btn btn-secondary me-1" type="button" (click)="backToPreviousComponent()"> הקודם</button>
+            <button class="btn btn-secondary" type="button" (click)="backToPreviousComponent()"> הקודם</button>
         </div>
       </form>
     </div>
-  </div>
 </div>
 
 <router-outlet></router-outlet>

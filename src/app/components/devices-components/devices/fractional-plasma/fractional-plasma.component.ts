@@ -35,7 +35,7 @@ export class FractionalPlasmaComponent extends DeviceComponent<PlasmaFractionalP
     const treatmentParametersStr = `\u202B ${this.deviceName}:\n תוכניות:` +
       this.parameters.technics
         .map(technic => `\u202B ${technic}`)
-        .join(',')  + super.updateTreatmetProperties()
+        .join(',')  + super.updateTreatmentProperties()
 
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }

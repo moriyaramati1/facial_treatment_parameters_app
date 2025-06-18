@@ -1,23 +1,21 @@
-<form>
-  <h5 class="form-input-data">{{ deviceName }}</h5>
+<h3 class="form-input-data fw-bolder">{{ deviceName }}</h3>
 
-  <div class="form-input-data">
-    <label class="form-label">בחרי ראשים</label>
+<div class="form-input-data">
+  <label class="form-label ms-2">בחרי ראשים</label>
 
-    <mat-form-field appearance="fill">
-      <mat-select [multiple]="true" [(value)]="parameters.technics" >
-        @for(technic of  plasmaFractionalTechnics | keyvalue; track technic.key){
-          <mat-option class="bg-white" [value]="technic.value">
-            {{technic.value}}
-          </mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
-  </div>
+  <mat-form-field appearance="fill">
+    <mat-select [multiple]="true" [(value)]="parameters.technics" >
+      @for(technic of  plasmaFractionalTechnics | keyvalue; track technic.key){
+        <mat-option class="bg-white" [value]="technic.value">
+          {{technic.value}}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>
 
-  <div class="form-input-data">
-    <span class="form-label"> חומר</span>
+<div class="form-input-data">
+  <span class="form-label"> חומר</span>
 
-    <input class="form-control" type="text" [(ngModel)]="material"/>
-  </div>
-</form>
+  <input class="form-control mt-1" type="text" [(ngModel)]="material" name="material" />
+</div>

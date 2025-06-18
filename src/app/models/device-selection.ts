@@ -4,8 +4,6 @@ import { DeviceComponent } from 'src/app/components/devices-components/device-co
 
 export interface Device {
   image: string,
-  cols: number,
-  rows: number,
   name: DeviceNames,
   component: Type<DeviceComponent<any>>
 }

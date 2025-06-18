@@ -52,20 +52,15 @@ export class HifuComponent extends DeviceComponent<HifuParameters>{
     });
   }
 
-  public get handelOptions() {
-    console.log("", Object.entries(this.hifuHandles).map(([key, value]) => key))
-    return Object.entries(this.hifuHandles).map(([key, value]) => key);
-  }
-
   public saveParameters(): void{
     const allParameters = { parameters: this.parameters, material: this.material };
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
 
-    const treatmentParametersStr = `\u202B ${this.deviceName}:\nידיות:` +
+    const treatmentParametersStr = `\u202B ${this.deviceName}:\n ידיות:` +
       this.parameters.handles
         .map(handle => `\u202B ${handle}`)
         .join(',') +
-    `\n עוצמה: ${this.parameters.intensity}` + super.updateTreatmetProperties()
+    `\n עוצמה: ${this.parameters.intensity}` + super.updateTreatmentProperties()
 
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }

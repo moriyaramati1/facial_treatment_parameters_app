@@ -1,0 +1,21 @@
+.fixed-form {
+  height: 60vh;
+  width: 95%; // ברירת מחדל – מתאים למובייל
+  max-width: 600px; // גבול לדסקטופ
+  margin-right: 0;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  .form-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .card-footer {
+    flex-shrink: 0;
+    margin-top: 1rem;
+  }
+}
