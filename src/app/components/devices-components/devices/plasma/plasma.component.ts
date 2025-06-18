@@ -28,7 +28,7 @@ export class PlasmaComponent extends DeviceComponent<PalsmaParameters> implement
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
 
       const treatmentParametersStr = ` ${this.deviceName}:\n` +  `\u202B תוכנית: ${this.parameters.selectedProcedure}, ערך: ${this.parameters.parameterValue}`
-      + super.updateTreatmetProperties();
+      + super.updateTreatmentProperties();
 
       this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
 

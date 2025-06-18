@@ -21,7 +21,7 @@ export abstract class DeviceComponent<TParams> implements OnInit{
       }
     }
 
-    public updateTreatmetProperties():string {
+    public updateTreatmentProperties():string {
        if(this.material){
        return `\n\u202B חומר: ${this.material}`
       }

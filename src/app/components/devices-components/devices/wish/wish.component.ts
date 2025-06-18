@@ -32,7 +32,7 @@ export class WishComponent extends DeviceComponent<WishParameters>{
        ` קפסולה: ${this.parameters.capsule}\n ראשים:` +
       this.parameters.head
         .map(head => `\u202B ${head}`)
-        .join(',') + super.updateTreatmetProperties();
+        .join(',') + super.updateTreatmentProperties();
 
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }

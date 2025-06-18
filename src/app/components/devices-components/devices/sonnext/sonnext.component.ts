@@ -23,7 +23,7 @@ export class SonnextComponent extends DeviceComponent<SonnextParameters> impleme
 
     const treatmentParametersStr = `\u202B ${this.deviceName}:\n` +
       `\u202B עצימות: ${this.parameters.intensity}, אורך גל: ${this.parameters.wave}, מהירות: ${this.parameters.velocity}`
-      + super.updateTreatmetProperties();
+      + super.updateTreatmentProperties();
 
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
 

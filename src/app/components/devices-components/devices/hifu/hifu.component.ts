@@ -60,7 +60,7 @@ export class HifuComponent extends DeviceComponent<HifuParameters>{
       this.parameters.handles
         .map(handle => `\u202B ${handle}`)
         .join(',') +
-    `\n עוצמה: ${this.parameters.intensity}` + super.updateTreatmetProperties()
+    `\n עוצמה: ${this.parameters.intensity}` + super.updateTreatmentProperties()
 
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }

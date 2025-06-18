@@ -24,7 +24,7 @@ export class ApolloDuetComponent extends DeviceComponent<ApolloDuetParameters[]>
       const treatmentParametersStr = `\u202B ${this.deviceName}:\n` +
       this.parameters
         .map(procedure => `\u202B תוכנית: ${procedure.procedureName} , עוצמה: ${procedure.intensity} , טמפרטורה: ${procedure.temperature}`)
-        .join('\n') + super.updateTreatmetProperties();
+        .join('\n') + super.updateTreatmentProperties();
       this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 

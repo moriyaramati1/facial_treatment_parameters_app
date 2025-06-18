@@ -19,7 +19,7 @@ export class PortiaComponent extends DeviceComponent<undefined> implements OnIni
   }
 
   public saveParameters(): void{
-    const treatmentParametersStr = `\u202B ${this.deviceName}:` + super.updateTreatmetProperties();
+    const treatmentParametersStr = `\u202B ${this.deviceName}:` + super.updateTreatmentProperties();
     this.treatmentDataService.setProperties(this.deviceName, { material: this.material});
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }

@@ -22,7 +22,7 @@ export class BioMicroneedlingComponent extends DeviceComponent<BioMicroneedlingP
     const allParameters = { parameters: this.parameters, material: this.material };
     this.treatmentDataService.setProperties(this.deviceName,allParameters);
 
-    const treatmentParametersStr = `\u202B ${this.deviceName}:\n \u200Fסוג: ${this.parameters.type}` + super.updateTreatmetProperties();
+    const treatmentParametersStr = `\u202B ${this.deviceName}:\n \u200Fסוג: ${this.parameters.type}` + super.updateTreatmentProperties();
 
     this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
