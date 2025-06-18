@@ -8,7 +8,7 @@
       <div class="d-flex flex-column align-items-end mb-1" dir="ltr">
         <label class="form-label"> שם העובדת</label>
         <mat-form-field appearance="fill">
-          <mat-select class="form-control w-75" [(ngModel)]="userName">
+          <mat-select [(ngModel)]="userName">
             @for(user of users; track $index){
               <mat-option class="bg-white"  [value]="user">
                 {{ user }}

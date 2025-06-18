@@ -9,10 +9,12 @@
 <div class="form-input-data">
   <span class="form-label"> אורך גל </span>
 
-  <select class="form-control" [(ngModel)]="parameters.wave">
-    <option>ארוך</option>
-    <option>קצר</option>
-  </select>
+  <mat-form-field appearance="fill">
+    <mat-select [(ngModel)]="parameters.wave">
+      <mat-option class="bg-white">ארוך</mat-option>
+      <mat-option class="bg-white">קצר</mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
 
 <div class="form-input-data">

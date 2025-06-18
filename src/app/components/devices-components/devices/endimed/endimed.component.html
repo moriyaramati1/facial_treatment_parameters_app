@@ -7,13 +7,15 @@
     </button>
 
     <div class="form-input-data ms-2">
-      <span class="form-label">ידית</span>
+      <span class="form-label me-3">ידית</span>
 
-      <select class="form-control" [(ngModel)]="parameter.handle">
-        @for (handle of endimedHandlers | keyvalue ; track handle.key) {
-          <option [value]="handle.value">{{handle.value}}</option>
-        }
-      </select>
+      <mat-form-field class="w-50" appearance="fill">
+        <mat-select [(ngModel)]="parameter.handle">
+          @for (handle of endimedHandlers | keyvalue ; track handle.key) {
+            <mat-option class="bg-white" [value]="handle.value">{{handle.value}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
     </div>
 
     <div class="form-input-data">

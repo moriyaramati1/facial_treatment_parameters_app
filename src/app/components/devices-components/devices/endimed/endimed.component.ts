@@ -5,10 +5,13 @@ import { EndimedParameters } from 'src/app/models/devices-parameters';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {DeviceComponent} from 'src/app/components/devices-components/device-component';
+import {MatFormField} from '@angular/material/input';
+import {MatOption} from '@angular/material/core';
+import {MatSelect} from '@angular/material/select';
 
 @Component({
   selector: 'app-endimed',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MatFormField, MatSelect, MatOption],
     templateUrl: './endimed.component.html',
   styleUrl: './endimed.component.scss'
 })
