@@ -75,21 +75,21 @@ export class TreatmentDataService {
 
   public getDevicesForSelection(){
     const devices: Device[] = [
-      {name: DeviceNames.BIOMICRONEEDLING, cols: 2,rows: 1 , image: 'assets/images/biomicroneedling.png',component: BioMicroneedlingComponent},
-      {name: DeviceNames.FRACTIONALPLASMA, cols: 2 ,rows: 1 ,image:'assets/images/plasma-fractioal.png',component: FractionalPlasmaComponent},
-      {name: DeviceNames.MICRONEEDLING, cols: 2 ,rows: 1 ,image:'assets/images/microideling.png',component: MicroneedlingComponent},
+      {name: DeviceNames.BIOMICRONEEDLING,image: 'assets/images/biomicroneedling.png',component: BioMicroneedlingComponent},
+      {name: DeviceNames.FRACTIONALPLASMA,image:'assets/images/plasma-fractioal.png',component: FractionalPlasmaComponent},
+      {name: DeviceNames.MICRONEEDLING,image:'assets/images/microideling.png',component: MicroneedlingComponent},
 
-      {name: DeviceNames.PORTIA, cols: 2,rows: 1 ,  image: 'assets/images/poatia.png',component: PortiaComponent},
-      {name: DeviceNames.HIFU, cols: 2 ,rows: 1 ,image:'assets/images/hifu.png',component: HifuComponent},
-      {name: DeviceNames.WISH, cols: 2 ,rows: 1 ,image:'assets/images/wish.png',component: WishComponent},
+      {name: DeviceNames.PORTIA,image: 'assets/images/poatia.png',component: PortiaComponent},
+      {name: DeviceNames.HIFU, image:'assets/images/hifu.png',component: HifuComponent},
+      {name: DeviceNames.WISH,image:'assets/images/wish.png',component: WishComponent},
 
-      {name: DeviceNames.SONNEXT, cols: 2,rows: 1 ,  image: 'assets/images/sonnext.png',component: SonnextComponent},
-      {name: DeviceNames.GUINOT, cols: 2 ,rows: 1 ,image:'assets/images/guinot.png',component: GuinotComponent},
-      {name: DeviceNames.RINNOVA, cols: 2 ,rows: 1 ,image:'assets/images/renuva.png',component: RinnovaComponent},
+      {name: DeviceNames.SONNEXT,image: 'assets/images/sonnext.png',component: SonnextComponent},
+      {name: DeviceNames.GUINOT, image:'assets/images/guinot.png',component: GuinotComponent},
+      {name: DeviceNames.RINNOVA,image:'assets/images/renuva.png',component: RinnovaComponent},
 
-      {name: DeviceNames.APOLLO_DUET, cols: 2,rows: 1 ,  image: 'assets/images/apollo-duet.png',component: ApolloDuetComponent},
-      {name: DeviceNames.PLASMA, cols: 2 ,rows: 1 ,image:'assets/images/plasma.png',component: PlasmaComponent},
-      {name: DeviceNames.ENDIMED, cols: 2 ,rows: 1 ,image:'assets/images/endimed.png',component: EndimedComponent},
+      {name: DeviceNames.APOLLO_DUET,image: 'assets/images/apollo-duet.png',component: ApolloDuetComponent},
+      {name: DeviceNames.PLASMA,image:'assets/images/plasma.png',component: PlasmaComponent},
+      {name: DeviceNames.ENDIMED, image:'assets/images/endimed.png',component: EndimedComponent},
 
     ];
     return devices;

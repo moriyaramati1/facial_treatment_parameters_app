@@ -3,7 +3,7 @@
 <div class="container mb-4">
   <button type="button" class="bi bi-box-arrow-right border-0 rounded-1 bg-dark text-white bi-align-center" (click)="logOut()"></button>
 
-  <div class="me-5">
+  <div class="me-2">
     @if(users){
       <div class="d-flex flex-column align-items-end mb-1" dir="ltr">
         <label class="form-label"> שם העובדת</label>
@@ -29,14 +29,14 @@
   <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
     @for (device of devices; track device) {
       <div (click)=treatmentDataService.updateSelection(device.name,device.component)>
-        <div class="card h-100 shadow-sm compact"
+        <div class="card border-2 h-100 shadow-sm compact"
              [class.selected]="treatmentDataService.isDeviceSelected(device.component)">
           <img class="card-img-top img-fluid"
-               style="height: 130px; width: 130px ;object-fit: cover; border-radius: 4px;"
+               style="height: 100px; width: 100px ;object-fit: cover; border-radius: 4px; filter: grayscale(60%)"
                [src]="device.image"
                alt="{{ device.name }}">
 
-          <div class="card-body d-flex flex-column text-center">
+          <div class="card-body d-flex flex-column text-center fw-bolder" style="width: 100px; font-size: 0.60rem;">
             <p class="card-text text-muted">{{ device.name }}</p>
           </div>
         </div>
@@ -45,4 +45,5 @@
   </div>
 
   <button class="btn gold-button gold-next-button" type="submit" (click)="moveToDevicesComponent()" [disabled]="!treatmentDataService.selectedDevices.length">הבא</button>
+</div>
 </div>
