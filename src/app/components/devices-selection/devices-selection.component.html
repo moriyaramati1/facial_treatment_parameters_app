@@ -6,9 +6,8 @@
   <div class="me-2">
     @if(users){
       <div class="d-flex flex-column align-items-end mb-1" dir="ltr">
-        <label class="form-label"> שם העובדת</label>
         <mat-form-field appearance="fill">
-          <mat-select [(ngModel)]="userName">
+          <mat-select [(ngModel)]="userName" placeholder="שם העובדת" class="text-center">
             @for(user of users; track $index){
               <mat-option class="bg-white"  [value]="user">
                 {{ user }}
