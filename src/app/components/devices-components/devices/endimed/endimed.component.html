@@ -1,27 +1,25 @@
 <h3 class="form-input-data fw-bolder">{{ deviceName }}</h3>
 
 @for (parameter of parameters ; track $index) {
-  <div class="d-flex flex-row align-items-end mb-2">
-    <button type="button" class="btn align-self-center mb-1" (click)="removeParameter($index)">
+  <div class="d-flex flex-row align-items-end">
+    <button type="button" class="btn align-self-center mb-4" (click)="removeParameter($index)">
       <i class="bi-dash-circle-fill fs-5"></i>
     </button>
 
-    <div class="form-input-data ms-2">
-      <span class="form-label me-3">ידית</span>
-
-      <mat-form-field class="w-50" appearance="fill">
-        <mat-select [(ngModel)]="parameter.handle">
+    <div class="d-flex justify-content-between">
+      <mat-form-field class=" me-2 mb-2 ms-3" appearance="fill">
+        <mat-select [(ngModel)]="parameter.handle" placeholder="בחרי ידית">
           @for (handle of endimedHandlers | keyvalue ; track handle.key) {
             <mat-option class="bg-white" [value]="handle.value">{{handle.value}}</mat-option>
           }
         </mat-select>
       </mat-form-field>
-    </div>
 
-    <div class="form-input-data">
-      <span class="form-label">רמה</span>
+      <div class="form-input-data ">
+        <span class="form-label">רמה</span>
 
-      <input class="form-control" type="number" [(ngModel)]="parameter.level">
+        <input class="form-control w-50" type="number" [(ngModel)]="parameter.level">
+      </div>
     </div>
   </div>
 }
