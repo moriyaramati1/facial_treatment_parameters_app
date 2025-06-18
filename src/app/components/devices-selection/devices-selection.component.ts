@@ -28,13 +28,12 @@ export class DevicesSelectionComponent implements OnInit {
 
   public ngOnInit() {
     const currentUser: string | null = localStorage.getItem('user');
-    this.devices = this.treatmentDataService.getDevicesForSelection();
-
     if (currentUser) {
       this.treatmentDataService.userName = currentUser;
     } else {
       this.loadUsers();
     }
+    this.devices = this.treatmentDataService.getDevicesForSelection();
   }
 
   set userName(value: string) {
@@ -43,6 +42,11 @@ export class DevicesSelectionComponent implements OnInit {
   }
 
   public moveToDevicesComponent(){
+    if (!this.treatmentDataService.userName || !this.treatmentDataService.patientName) {
+      alert('אנא מלאי את כל השדות');
+      return;
+    }
+
     this.router.navigate(['/devices']);
   }
 

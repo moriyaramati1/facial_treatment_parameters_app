@@ -23,8 +23,8 @@ import { TreatmentReport } from 'src/app/models/treatment-report';
 export class TreatmentDataService {
   private devicesData: Map<DeviceNames,string> = new Map<DeviceNames, string>();
   private devicesProperties: Map<DeviceNames, object> = new Map<DeviceNames, object>();
-  public patientName: string = '';
-  public userName: string = '';
+  public patientName!: string;
+  public userName!: string;
   public selectedDevices: Type<DeviceComponent<any>>[] = [];
   public currentComponentIndex: number = 0;
   public treatmentReport!: TreatmentReport;
