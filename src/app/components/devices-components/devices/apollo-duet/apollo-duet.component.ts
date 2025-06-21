@@ -22,10 +22,16 @@ export class ApolloDuetComponent extends DeviceComponent<ApolloDuetParameters[]>
       const allParameters = { parameters: this.parameters, material: this.material };
       this.treatmentDataService.setProperties(this.deviceName,allParameters);
       const treatmentParametersStr = `\u202B ${this.deviceName}:\n` +
-      this.parameters
-        .map(procedure => `\u202B תוכנית: ${procedure.procedureName} , עוצמה: ${procedure.intensity} , טמפרטורה: ${procedure.temperature}`)
-        .join('\n') + super.updateTreatmentProperties();
-      this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
+        this.parameters
+          .map(procedure => {
+            if (procedure.intensity && procedure.temperature) {
+              return `\u202B תוכנית: ${procedure.procedureName} , עוצמה: ${procedure.intensity} , טמפרטורה: ${procedure.temperature}`;
+            }
+            return '';
+          })
+          .filter(Boolean)
+          .join('\n') + super.updateTreatmentProperties();
+    this.treatmentDataService.setData(this.deviceName, treatmentParametersStr);
   }
 
   public initializeParameters(): void   {

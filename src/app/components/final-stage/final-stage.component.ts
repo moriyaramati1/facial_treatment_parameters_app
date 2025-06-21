@@ -3,6 +3,7 @@ import {PostInformationService} from 'src/app/services/post-information.service'
 import {TreatmentDataService} from 'src/app/services/treatment-data.service';
 import {Location} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-final-stage',
@@ -14,6 +15,7 @@ import {FormsModule} from '@angular/forms';
 })
 export class FinalStageComponent implements OnInit {
   public location: Location = inject(Location);
+  public router = inject(Router);
   public postInformationService: PostInformationService = inject(PostInformationService);
   public treatmentDataService: TreatmentDataService = inject(TreatmentDataService);
   public isSendEnabled: boolean = false;
@@ -34,7 +36,11 @@ export class FinalStageComponent implements OnInit {
       .subscribe(response => {
         this.isSendEnabled = false;
         if (response) {
-          alert("הנתונים נשלחו בהצלחה!");
+          alert("הנתונים נשלחו בהצלחה!")
+          this.router.navigate(['/']).then(() => {
+            window.location.reload();
+          })
+
         }
       });
   }
